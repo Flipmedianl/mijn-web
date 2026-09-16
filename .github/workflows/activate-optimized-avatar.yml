@@ -1,0 +1,27 @@
+name: Activate optimized avatar
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/activate-optimized-avatar.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  activate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Replace original avatar with optimized version
+        run: |
+          test -f assets/avatar-optimized.glb
+          cp assets/avatar-optimized.glb assets/avatar.glb
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/avatar.glb
+          git diff --cached --quiet && exit 0
+          git commit -m "Use optimized avatar on website"
+          git push
