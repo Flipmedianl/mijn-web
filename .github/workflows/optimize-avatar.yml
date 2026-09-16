@@ -1,0 +1,36 @@
+name: Optimize 3D avatar
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  optimize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install glTF Transform
+        run: npm install --global @gltf-transform/cli
+
+      - name: Optimize avatar without texture quality loss
+        run: |
+          gltf-transform optimize assets/avatar.glb assets/avatar-optimized.glb --texture-compress false
+          ls -lh assets/avatar.glb assets/avatar-optimized.glb
+
+      - name: Commit optimized avatar
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/avatar-optimized.glb
+          git diff --cached --quiet && exit 0
+          git commit -m "Optimize 3D avatar for web"
+          git push
