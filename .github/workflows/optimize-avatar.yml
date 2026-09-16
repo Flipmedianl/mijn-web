@@ -1,6 +1,10 @@
 name: Optimize 3D avatar
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/optimize-avatar.yml'
   workflow_dispatch:
 
 permissions:
@@ -21,16 +25,16 @@ jobs:
       - name: Install glTF Transform
         run: npm install --global @gltf-transform/cli
 
-      - name: Optimize avatar without texture quality loss
+      - name: Create lightweight mobile avatar
         run: |
-          gltf-transform optimize assets/avatar.glb assets/avatar-optimized.glb --texture-compress false
-          ls -lh assets/avatar.glb assets/avatar-optimized.glb
+          gltf-transform optimize assets/avatar.glb assets/avatar-mobile.glb --compress draco --texture-compress webp --texture-size 1024
+          ls -lh assets/avatar.glb assets/avatar-mobile.glb
 
-      - name: Commit optimized avatar
+      - name: Commit mobile avatar
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/avatar-optimized.glb
+          git add assets/avatar-mobile.glb
           git diff --cached --quiet && exit 0
-          git commit -m "Optimize 3D avatar for web"
+          git commit -m "Add lightweight mobile avatar"
           git push
