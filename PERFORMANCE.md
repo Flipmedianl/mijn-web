@@ -29,7 +29,14 @@ Videos attach sources near their section and detach them outside it. Only one se
 
 ## Verification
 
+- Run `node tests/video.cjs` for mobile source selection, serialized seeking, final-target drain and offscreen release.
 - Run `node tests/scheduler.cjs` for concurrency, cancellation, 10,000-frame scaling, stepping and bitmap budget assertions.
 - Open `tests/performance.html` on the deployed origin. It loads the actual website in 390×844 / 1280×800 frames and measures forward/reverse scrolling, frames displayed, resource requests, long tasks, final video seek and release. It does not simulate physical phone CPU/GPU performance.
 - The opt-in `?audit=1` diagnostics expose counters only; nothing is uploaded.
 - Also inspect the avatar on a real WebGL-capable phone and desktop. A cloud browser without WebGL can verify fallback behavior but cannot verify 3D rendering smoothness.
+
+## Live verification result
+
+The deployed runtime at commit `86f9e0d` passed all seven checks on both 390×844 and 1280×800 viewports: no early heavy-media requests, frame 61 at the end, frame 1 on return, bounded bitmap memory, release outside sections, final video seek, and no JavaScript errors. See `tests/live-results.json`. The first live test exposed excessive catch-up time when animation callbacks were throttled; ticks over 120ms now synchronize immediately to the scroll target. Both glTF outputs validated without errors (the validator notes runtime-generated tangent space and cannot validate the Draco extension itself).
+
+The cloud browser throttled animation callbacks to roughly 1 Hz and had no WebGL. This result verifies functional behavior and loading, not 60fps animation, visual fidelity of the simplified avatar, or physical-phone GPU smoothness. Those remain device checks.

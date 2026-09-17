@@ -1,0 +1,237 @@
+{
+  "desktop": {
+    "checks": {
+      "finalSeek": true,
+      "firstFrameOnReturn": true,
+      "lastFrame": true,
+      "memoryBounded": true,
+      "noEarlyHeavyMedia": true,
+      "noScriptErrors": true,
+      "resourcesReleased": true
+    },
+    "end": {
+      "avatar": "avatar-sec",
+      "queued": 0,
+      "running": 0,
+      "sequences": [
+        {
+          "active": true,
+          "bytes": 66355200,
+          "decoded": 18,
+          "frame": 61,
+          "near": true,
+          "target": 61
+        }
+      ],
+      "videos": [
+        {
+          "loaded": false,
+          "seeking": false,
+          "target": 0,
+          "time": 0
+        }
+      ]
+    },
+    "errors": [],
+    "initial": {
+      "avatar": "avatar-sec",
+      "queued": 0,
+      "running": 0,
+      "sequences": [
+        {
+          "active": true,
+          "bytes": 36864000,
+          "decoded": 10,
+          "frame": 1,
+          "near": true,
+          "target": 1
+        }
+      ],
+      "videos": [
+        {
+          "loaded": false,
+          "seeking": false,
+          "target": 0,
+          "time": 0
+        }
+      ]
+    },
+    "released": {
+      "avatar": "avatar-sec avatar-fallback",
+      "queued": 0,
+      "running": 0,
+      "sequences": [
+        {
+          "active": false,
+          "bytes": 0,
+          "decoded": 0,
+          "frame": 1,
+          "near": false,
+          "target": 61
+        }
+      ],
+      "videos": [
+        {
+          "loaded": false,
+          "seeking": false,
+          "target": 0.50833325,
+          "time": 0
+        }
+      ]
+    },
+    "reverse": {
+      "avatar": "avatar-sec",
+      "queued": 0,
+      "running": 0,
+      "sequences": [
+        {
+          "active": true,
+          "bytes": 66355200,
+          "decoded": 18,
+          "frame": 1,
+          "near": true,
+          "target": 1
+        }
+      ],
+      "videos": [
+        {
+          "loaded": false,
+          "seeking": false,
+          "target": 0,
+          "time": 0
+        }
+      ]
+    },
+    "scroll": {
+      "maxFrameIntervalMs": 1017,
+      "note": "Browser animation ticks are throttled; these intervals cannot establish physical-device frame rate.",
+      "p95FrameIntervalMs": 1017,
+      "uniqueFrames": 7
+    },
+    "viewport": [
+      1280,
+      800
+    ]
+  },
+  "limitations": [
+    "Cloud browser has no WebGL: avatar render and physical GPU smoothness not verified.",
+    "Animation callbacks throttled to about 1 Hz: no valid physical-device FPS measurement.",
+    "Responsive iframe viewports, not real mobile hardware."
+  ],
+  "mobile": {
+    "checks": {
+      "finalSeek": true,
+      "firstFrameOnReturn": true,
+      "lastFrame": true,
+      "memoryBounded": true,
+      "noEarlyHeavyMedia": true,
+      "noScriptErrors": true,
+      "resourcesReleased": true
+    },
+    "end": {
+      "avatar": "avatar-sec",
+      "queued": 0,
+      "running": 0,
+      "sequences": [
+        {
+          "active": true,
+          "bytes": 32659200,
+          "decoded": 21,
+          "frame": 61,
+          "near": true,
+          "target": 61
+        }
+      ],
+      "videos": [
+        {
+          "loaded": false,
+          "seeking": false,
+          "target": 0,
+          "time": 0
+        }
+      ]
+    },
+    "errors": [],
+    "initial": {
+      "avatar": "avatar-sec",
+      "queued": 0,
+      "running": 0,
+      "sequences": [
+        {
+          "active": true,
+          "bytes": 20217600,
+          "decoded": 13,
+          "frame": 1,
+          "near": true,
+          "target": 1
+        }
+      ],
+      "videos": [
+        {
+          "loaded": false,
+          "seeking": false,
+          "target": 0,
+          "time": 0
+        }
+      ]
+    },
+    "released": {
+      "avatar": "avatar-sec avatar-fallback",
+      "queued": 0,
+      "running": 0,
+      "sequences": [
+        {
+          "active": false,
+          "bytes": 0,
+          "decoded": 0,
+          "frame": 1,
+          "near": false,
+          "target": 61
+        }
+      ],
+      "videos": [
+        {
+          "loaded": false,
+          "seeking": false,
+          "target": 1.8528932147654826,
+          "time": 0
+        }
+      ]
+    },
+    "reverse": {
+      "avatar": "avatar-sec",
+      "queued": 0,
+      "running": 0,
+      "sequences": [
+        {
+          "active": true,
+          "bytes": 32659200,
+          "decoded": 21,
+          "frame": 1,
+          "near": true,
+          "target": 1
+        }
+      ],
+      "videos": [
+        {
+          "loaded": false,
+          "seeking": false,
+          "target": 0,
+          "time": 0
+        }
+      ]
+    },
+    "scroll": {
+      "maxFrameIntervalMs": 1033,
+      "note": "Browser animation ticks are throttled; these intervals cannot establish physical-device frame rate.",
+      "p95FrameIntervalMs": 1033,
+      "uniqueFrames": 8
+    },
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  "source": "https://flipmedianl.github.io/mijn-web/tests/performance.html",
+  "testedCommit": "86f9e0d4c4f22fccacf307a6a29351340fd2d05d"
+}
