@@ -1,6 +1,6 @@
 // This module and model-viewer are requested only near the avatar section.
 let viewerImport;
-export async function mountAvatar(section, model, mobile) {
+export async function mountAvatar(section, model, mobile, isCurrent = () => true) {
   let disposed=false, lastAngle=NaN;
   const fail=()=>{section.classList.remove('avatar-ready');section.classList.add('avatar-fallback');};
   const canvas=document.createElement('canvas');
@@ -12,6 +12,7 @@ export async function mountAvatar(section, model, mobile) {
     viewerImport ||= import('https://unpkg.com/@google/model-viewer@4.1.0/dist/model-viewer.min.js');
     await viewerImport;
   } catch { viewerImport=null; fail(); return {update(){},dispose(){}}; }
+  if (!isCurrent()) return null;
   const Viewer=customElements.get('model-viewer');
   Viewer.modelCacheSize=0;
   Viewer.minimumRenderScale=0.5;

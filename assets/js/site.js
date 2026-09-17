@@ -111,7 +111,7 @@ class FrameSequence {
   drawNearest(frame) {
     if (this.draw(frame)) return;
     const nearest = [...this.cache.keys()].sort((a,b) => Math.abs(a-frame)-Math.abs(b-frame))[0];
-    if (nearest !== undefined) this.draw(nearest);
+    if (nearest !== undefined && (this.last < 0 || Math.abs(nearest-frame) <= 4)) this.draw(nearest);
   }
   update(dt) {
     if (!this.near || document.hidden) return false;
@@ -185,10 +185,10 @@ function loadAvatar() {
   const generation = ++avatarGeneration;
   avatarModule = import('./avatar.js?v=7').then(async ({mountAvatar}) => {
     if (!avatarNear || document.hidden || generation !== avatarGeneration) return;
-    avatarController = await mountAvatar(avatar, model, mobileQuery.matches);
+    avatarController = await mountAvatar(avatar, model, mobileQuery.matches, () => avatarNear && !document.hidden && generation === avatarGeneration);
     if (!avatarNear || document.hidden || generation !== avatarGeneration) { avatarController?.dispose(); avatarController=null; }
     requestUpdate();
-  }).catch(() => avatar.classList.add('avatar-fallback')).finally(() => { avatarModule=null; });
+  }).catch(() => avatar.classList.add('avatar-fallback')).finally(() => { avatarModule=null; if (generation !== avatarGeneration) loadAvatar(); });
 }
 new IntersectionObserver(([e]) => {
   avatarNear=e.isIntersecting;
