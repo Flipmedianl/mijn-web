@@ -16,7 +16,7 @@ function load(width,height){
 }
 function snapshot(){
   const w=frame.contentWindow;
-  return {viewport:[w.innerWidth,w.innerHeight],diagnostics:w.flipmediaDiagnostics?.(),resources:w.performance.getEntriesByType('resource').map(e=>({name:e.name.split('/').pop(),bytes:e.transferSize,duration:Math.round(e.duration)})),longTasks,errors};
+  return {viewport:[w.innerWidth,w.innerHeight],diagnostics:w.flipmediaDiagnostics?.(),navigation:w.performance.getEntriesByType('navigation').map(e=>({ttfb:e.responseStart-e.requestStart,bytes:e.transferSize,encoded:e.encodedBodySize})),resources:w.performance.getEntriesByType('resource').map(e=>({name:e.name.split('/').pop(),url:e.name,bytes:e.transferSize,encoded:e.encodedBodySize,duration:Math.round(e.duration)})),longTasks,errors};
 }
 async function scrollTo(y,duration=1400){
   const w=frame.contentWindow,start=w.scrollY,time=performance.now();
@@ -57,5 +57,18 @@ async function run(){
 document.querySelector('#mobile').onclick=()=>load(390,844);
 document.querySelector('#desktop').onclick=()=>load(1280,800);
 document.querySelector('#run').onclick=run;
+document.querySelector('#idle').onclick=async()=>{
+  if(!frame||running)return;running=true;report.textContent='Buffer-rusttest loopt…';
+  try{
+    const w=frame.contentWindow,d=w.document,top=d.querySelector('#top');
+    const travel=top.offsetHeight-top.firstElementChild.clientHeight;
+    await scrollTo(0,1);await wait(1800);
+    await scrollTo(travel*29/60,4000);await settle();await wait(3000);
+    const before=snapshot();await wait(4000);const after=snapshot();
+    const frameRequests=r=>r.resources.filter(e=>/frame-\d+\.webp/.test(e.name)).length;
+    const extra=frameRequests(after)-frameRequests(before);
+    report.textContent=JSON.stringify({test:'stationary-frame-buffer',before,after,extraFrameRequests:extra,checks:{frame30:after.diagnostics.sequences[0].frame===30,noIdleFrameRequests:extra===0,idlePool:after.diagnostics.running===0&&after.diagnostics.queued===0}},null,2);
+  }catch(e){report.textContent=String(e);}finally{running=false;}
+};
 document.querySelector('#read').onclick=()=>{if(frame)report.textContent=JSON.stringify(snapshot(),null,2);};
 for(const id of ['avatar','video'])document.querySelector('#'+id).onclick=()=>{if(frame&&!running){const w=frame.contentWindow;w.scrollTo({top:w.document.querySelector(id==='video'?'#scale':'#avatar').offsetTop+100,behavior:'instant'});}};
