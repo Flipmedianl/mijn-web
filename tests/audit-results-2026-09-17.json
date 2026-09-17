@@ -1,0 +1,1444 @@
+{
+  "pagespeed": [
+    {
+      "label": "before-1-mobile",
+      "url": "https://pagespeed.web.dev/analysis/https-flipmedianl-github-io-mijn-web/8y6515la3g?form_factor=mobile",
+      "score": "99\nPrestaties",
+      "calculator": "https://googlechrome.github.io/lighthouse/scorecalc/#FCP=797&LCP=1057&TBT=0&CLS=0&SI=3617&TTI=1057&device=mobile&version=13.4.1",
+      "fieldData": "unavailable"
+    },
+    {
+      "label": "before-1-desktop",
+      "url": "https://pagespeed.web.dev/analysis/https-flipmedianl-github-io-mijn-web/8y6515la3g?form_factor=desktop",
+      "score": "100\nPrestaties",
+      "calculator": "https://googlechrome.github.io/lighthouse/scorecalc/#FCP=220&LCP=284&TBT=0&CLS=0&SI=280&TTI=284&device=desktop&version=13.4.1",
+      "fieldData": "unavailable"
+    },
+    {
+      "label": "before-2-mobile",
+      "url": "https://pagespeed.web.dev/analysis/https-flipmedianl-github-io-mijn-web/ldgh035jvx?form_factor=mobile",
+      "score": "100\nPrestaties",
+      "calculator": "https://googlechrome.github.io/lighthouse/scorecalc/#FCP=767&LCP=767&TBT=0&CLS=0&SI=767&TTI=767&device=mobile&version=13.4.1",
+      "fieldData": "unavailable"
+    },
+    {
+      "label": "before-2-desktop",
+      "url": "https://pagespeed.web.dev/analysis/https-flipmedianl-github-io-mijn-web/ldgh035jvx?form_factor=desktop",
+      "score": "100\nPrestaties",
+      "calculator": "https://googlechrome.github.io/lighthouse/scorecalc/#FCP=238&LCP=283&TBT=0&CLS=0&SI=334&TTI=283&device=desktop&version=13.4.1",
+      "fieldData": "unavailable"
+    },
+    {
+      "label": "before-3-mobile",
+      "url": "https://pagespeed.web.dev/analysis/https-flipmedianl-github-io-mijn-web/7yalupu6jc?form_factor=mobile",
+      "score": "99\nPrestaties",
+      "calculator": "https://googlechrome.github.io/lighthouse/scorecalc/#FCP=794&LCP=1054&TBT=0&CLS=0&SI=3552&TTI=1054&device=mobile&version=13.4.1",
+      "fieldData": "unavailable"
+    },
+    {
+      "label": "before-3-desktop",
+      "url": "https://pagespeed.web.dev/analysis/https-flipmedianl-github-io-mijn-web/7yalupu6jc?form_factor=desktop",
+      "score": "100\nPrestaties",
+      "calculator": "https://googlechrome.github.io/lighthouse/scorecalc/#FCP=278&LCP=288&TBT=0&CLS=0&SI=497&TTI=288&device=desktop&version=13.4.1",
+      "fieldData": "unavailable"
+    },
+    {
+      "label": "after-1-mobile",
+      "url": "https://pagespeed.web.dev/analysis/https-flipmedianl-github-io-mijn-web/s0u89121hm?form_factor=mobile",
+      "score": "100\nPrestaties",
+      "calculator": "https://googlechrome.github.io/lighthouse/scorecalc/#FCP=796&LCP=796&TBT=0&CLS=0&SI=796&TTI=796&device=mobile&version=13.4.1",
+      "fieldData": "unavailable"
+    },
+    {
+      "label": "after-1-desktop",
+      "url": "https://pagespeed.web.dev/analysis/https-flipmedianl-github-io-mijn-web/s0u89121hm?form_factor=desktop",
+      "score": "100\nPrestaties",
+      "calculator": "https://googlechrome.github.io/lighthouse/scorecalc/#FCP=223&LCP=343&TBT=0&CLS=0&SI=382&TTI=343&device=desktop&version=13.4.1",
+      "fieldData": "unavailable"
+    },
+    {
+      "label": "after-2-mobile",
+      "url": "https://pagespeed.web.dev/analysis/https-flipmedianl-github-io-mijn-web/f6bxq3fo22?form_factor=mobile",
+      "score": "100\nPrestaties",
+      "calculator": "https://googlechrome.github.io/lighthouse/scorecalc/#FCP=823&LCP=1054&TBT=0&CLS=0&SI=2161&TTI=1054&device=mobile&version=13.4.1",
+      "fieldData": "unavailable"
+    },
+    {
+      "label": "after-2-desktop",
+      "url": "https://pagespeed.web.dev/analysis/https-flipmedianl-github-io-mijn-web/f6bxq3fo22?form_factor=desktop",
+      "score": "100\nPrestaties",
+      "calculator": "https://googlechrome.github.io/lighthouse/scorecalc/#FCP=223&LCP=343&TBT=0&CLS=0&SI=382&TTI=343&device=desktop&version=13.4.1",
+      "fieldData": "unavailable"
+    },
+    {
+      "label": "after-3-mobile",
+      "url": "https://pagespeed.web.dev/analysis/https-flipmedianl-github-io-mijn-web/euvuj2g8dh?form_factor=mobile",
+      "score": "100\nPrestaties",
+      "calculator": "https://googlechrome.github.io/lighthouse/scorecalc/#FCP=786&LCP=1067&TBT=0&CLS=0&SI=2210&TTI=1067&device=mobile&version=13.4.1",
+      "fieldData": "unavailable"
+    },
+    {
+      "label": "after-3-desktop",
+      "url": "https://pagespeed.web.dev/analysis/https-flipmedianl-github-io-mijn-web/euvuj2g8dh?form_factor=desktop",
+      "score": "100\nPrestaties",
+      "calculator": "https://googlechrome.github.io/lighthouse/scorecalc/#FCP=414&LCP=679&TBT=16&CLS=0&SI=705&TTI=679&device=desktop&version=13.4.1",
+      "fieldData": "unavailable"
+    }
+  ],
+  "scroll": [
+    {
+      "label": "before-mobile",
+      "checks": {
+        "noEarlyHeavyMedia": true,
+        "lastFrame": true,
+        "firstFrameOnReturn": true,
+        "memoryBounded": true,
+        "resourcesReleased": true,
+        "finalSeek": true,
+        "noScriptErrors": true
+      },
+      "scroll": {
+        "uniqueFrames": 9,
+        "p95FrameIntervalMs": 1017,
+        "maxFrameIntervalMs": 1017,
+        "note": "Browser animation ticks are throttled; these intervals cannot establish physical-device frame rate."
+      },
+      "stages": {
+        "initial": {
+          "diagnostics": {
+            "running": 0,
+            "queued": 0,
+            "sequences": [
+              {
+                "frame": 1,
+                "target": 1,
+                "active": true,
+                "near": true,
+                "decoded": 13,
+                "bytes": 20217600
+              }
+            ],
+            "avatar": "avatar-sec",
+            "videos": [
+              {
+                "loaded": false,
+                "time": 0,
+                "target": 0,
+                "seeking": false
+              }
+            ]
+          },
+          "resourceCount": 16,
+          "longTasks": [],
+          "errors": []
+        },
+        "end": {
+          "diagnostics": {
+            "running": 0,
+            "queued": 0,
+            "sequences": [
+              {
+                "frame": 61,
+                "target": 61,
+                "active": true,
+                "near": true,
+                "decoded": 21,
+                "bytes": 32659200
+              }
+            ],
+            "avatar": "avatar-sec",
+            "videos": [
+              {
+                "loaded": false,
+                "time": 0,
+                "target": 0,
+                "seeking": false
+              }
+            ]
+          },
+          "resourceCount": 48,
+          "longTasks": [],
+          "errors": []
+        },
+        "reverse": {
+          "diagnostics": {
+            "running": 0,
+            "queued": 0,
+            "sequences": [
+              {
+                "frame": 1,
+                "target": 1,
+                "active": true,
+                "near": true,
+                "decoded": 21,
+                "bytes": 32659200
+              }
+            ],
+            "avatar": "avatar-sec",
+            "videos": [
+              {
+                "loaded": false,
+                "time": 0,
+                "target": 0,
+                "seeking": false
+              }
+            ]
+          },
+          "resourceCount": 62,
+          "longTasks": [],
+          "errors": []
+        },
+        "avatar": {
+          "diagnostics": {
+            "running": 0,
+            "queued": 0,
+            "sequences": [
+              {
+                "frame": 1,
+                "target": 1,
+                "active": false,
+                "near": false,
+                "decoded": 0,
+                "bytes": 0
+              }
+            ],
+            "avatar": "avatar-sec avatar-fallback",
+            "videos": [
+              {
+                "loaded": false,
+                "time": 0,
+                "target": 0,
+                "seeking": false
+              }
+            ]
+          },
+          "resourceCount": 63,
+          "longTasks": [],
+          "errors": []
+        },
+        "video": {
+          "diagnostics": {
+            "running": 0,
+            "queued": 0,
+            "sequences": [
+              {
+                "frame": 1,
+                "target": 1,
+                "active": false,
+                "near": false,
+                "decoded": 0,
+                "bytes": 0
+              }
+            ],
+            "avatar": "avatar-sec avatar-fallback",
+            "videos": [
+              {
+                "loaded": true,
+                "time": 1.999999,
+                "target": 2.033333,
+                "seeking": false
+              }
+            ]
+          },
+          "resourceCount": 65,
+          "longTasks": [],
+          "errors": []
+        },
+        "released": {
+          "diagnostics": {
+            "running": 0,
+            "queued": 0,
+            "sequences": [
+              {
+                "frame": 1,
+                "target": 1,
+                "active": false,
+                "near": false,
+                "decoded": 0,
+                "bytes": 0
+              }
+            ],
+            "avatar": "avatar-sec avatar-fallback",
+            "videos": [
+              {
+                "loaded": false,
+                "time": 0,
+                "target": 2.033333,
+                "seeking": false
+              }
+            ]
+          },
+          "resourceCount": 65,
+          "longTasks": [],
+          "errors": []
+        }
+      },
+      "initialResources": [
+        {
+          "name": "frame-001.webp",
+          "bytes": 20414,
+          "duration": 178
+        },
+        {
+          "name": "site.css?v=8",
+          "bytes": 0,
+          "duration": 5
+        },
+        {
+          "name": "site.js?v=8",
+          "bytes": 0,
+          "duration": 6
+        },
+        {
+          "name": "frame-001.webp",
+          "bytes": 0,
+          "duration": 4
+        },
+        {
+          "name": "frame-002.webp",
+          "bytes": 20132,
+          "duration": 114
+        },
+        {
+          "name": "frame-003.webp",
+          "bytes": 20588,
+          "duration": 274
+        },
+        {
+          "name": "frame-004.webp",
+          "bytes": 20282,
+          "duration": 269
+        },
+        {
+          "name": "frame-005.webp",
+          "bytes": 20752,
+          "duration": 288
+        },
+        {
+          "name": "frame-006.webp",
+          "bytes": 20096,
+          "duration": 135
+        },
+        {
+          "name": "frame-007.webp",
+          "bytes": 20208,
+          "duration": 284
+        },
+        {
+          "name": "frame-008.webp",
+          "bytes": 20246,
+          "duration": 167
+        },
+        {
+          "name": "frame-009.webp",
+          "bytes": 20642,
+          "duration": 168
+        },
+        {
+          "name": "frame-010.webp",
+          "bytes": 20298,
+          "duration": 159
+        },
+        {
+          "name": "frame-011.webp",
+          "bytes": 20758,
+          "duration": 237
+        },
+        {
+          "name": "frame-012.webp",
+          "bytes": 20876,
+          "duration": 231
+        },
+        {
+          "name": "frame-013.webp",
+          "bytes": 21702,
+          "duration": 117
+        }
+      ]
+    },
+    {
+      "label": "before-desktop",
+      "checks": {
+        "noEarlyHeavyMedia": true,
+        "lastFrame": true,
+        "firstFrameOnReturn": true,
+        "memoryBounded": true,
+        "resourcesReleased": true,
+        "finalSeek": true,
+        "noScriptErrors": true
+      },
+      "scroll": {
+        "uniqueFrames": 7,
+        "p95FrameIntervalMs": 1017,
+        "maxFrameIntervalMs": 1017,
+        "note": "Browser animation ticks are throttled; these intervals cannot establish physical-device frame rate."
+      },
+      "stages": {
+        "initial": {
+          "diagnostics": {
+            "running": 0,
+            "queued": 0,
+            "sequences": [
+              {
+                "frame": 1,
+                "target": 1,
+                "active": true,
+                "near": true,
+                "decoded": 10,
+                "bytes": 36864000
+              }
+            ],
+            "avatar": "avatar-sec",
+            "videos": [
+              {
+                "loaded": false,
+                "time": 0,
+                "target": 0,
+                "seeking": false
+              }
+            ]
+          },
+          "resourceCount": 13,
+          "longTasks": [],
+          "errors": []
+        },
+        "end": {
+          "diagnostics": {
+            "running": 0,
+            "queued": 0,
+            "sequences": [
+              {
+                "frame": 61,
+                "target": 61,
+                "active": true,
+                "near": true,
+                "decoded": 18,
+                "bytes": 66355200
+              }
+            ],
+            "avatar": "avatar-sec",
+            "videos": [
+              {
+                "loaded": false,
+                "time": 0,
+                "target": 0,
+                "seeking": false
+              }
+            ]
+          },
+          "resourceCount": 37,
+          "longTasks": [],
+          "errors": []
+        },
+        "reverse": {
+          "diagnostics": {
+            "running": 0,
+            "queued": 0,
+            "sequences": [
+              {
+                "frame": 1,
+                "target": 1,
+                "active": true,
+                "near": true,
+                "decoded": 18,
+                "bytes": 66355200
+              }
+            ],
+            "avatar": "avatar-sec",
+            "videos": [
+              {
+                "loaded": false,
+                "time": 0,
+                "target": 0,
+                "seeking": false
+              }
+            ]
+          },
+          "resourceCount": 59,
+          "longTasks": [],
+          "errors": []
+        },
+        "avatar": {
+          "diagnostics": {
+            "running": 0,
+            "queued": 0,
+            "sequences": [
+              {
+                "frame": 1,
+                "target": 1,
+                "active": false,
+                "near": false,
+                "decoded": 0,
+                "bytes": 0
+              }
+            ],
+            "avatar": "avatar-sec avatar-fallback",
+            "videos": [
+              {
+                "loaded": false,
+                "time": 0,
+                "target": 0,
+                "seeking": false
+              }
+            ]
+          },
+          "resourceCount": 60,
+          "longTasks": [],
+          "errors": []
+        },
+        "video": {
+          "diagnostics": {
+            "running": 0,
+            "queued": 0,
+            "sequences": [
+              {
+                "frame": 1,
+                "target": 1,
+                "active": false,
+                "near": false,
+                "decoded": 0,
+                "bytes": 0
+              }
+            ],
+            "avatar": "avatar-sec avatar-fallback",
+            "videos": [
+              {
+                "loaded": true,
+                "time": 0.508333,
+                "target": 0.50833325,
+                "seeking": false
+              }
+            ]
+          },
+          "resourceCount": 62,
+          "longTasks": [],
+          "errors": []
+        },
+        "released": {
+          "diagnostics": {
+            "running": 0,
+            "queued": 0,
+            "sequences": [
+              {
+                "frame": 1,
+                "target": 1,
+                "active": false,
+                "near": false,
+                "decoded": 0,
+                "bytes": 0
+              }
+            ],
+            "avatar": "avatar-sec avatar-fallback",
+            "videos": [
+              {
+                "loaded": false,
+                "time": 0,
+                "target": 0.50833325,
+                "seeking": false
+              }
+            ]
+          },
+          "resourceCount": 62,
+          "longTasks": [],
+          "errors": []
+        }
+      },
+      "initialResources": [
+        {
+          "name": "frame-001.webp",
+          "bytes": 0,
+          "duration": 10
+        },
+        {
+          "name": "site.css?v=8",
+          "bytes": 0,
+          "duration": 7
+        },
+        {
+          "name": "site.js?v=8",
+          "bytes": 0,
+          "duration": 10
+        },
+        {
+          "name": "frame-001.webp",
+          "bytes": 0,
+          "duration": 12
+        },
+        {
+          "name": "frame-002.webp",
+          "bytes": 0,
+          "duration": 12
+        },
+        {
+          "name": "frame-003.webp",
+          "bytes": 0,
+          "duration": 13
+        },
+        {
+          "name": "frame-004.webp",
+          "bytes": 0,
+          "duration": 14
+        },
+        {
+          "name": "frame-005.webp",
+          "bytes": 0,
+          "duration": 10
+        },
+        {
+          "name": "frame-006.webp",
+          "bytes": 0,
+          "duration": 4
+        },
+        {
+          "name": "frame-007.webp",
+          "bytes": 0,
+          "duration": 4
+        },
+        {
+          "name": "frame-008.webp",
+          "bytes": 0,
+          "duration": 4
+        },
+        {
+          "name": "frame-009.webp",
+          "bytes": 0,
+          "duration": 11
+        },
+        {
+          "name": "frame-010.webp",
+          "bytes": 0,
+          "duration": 7
+        }
+      ]
+    },
+    {
+      "label": "after-desktop",
+      "checks": {
+        "noEarlyHeavyMedia": true,
+        "lastFrame": true,
+        "firstFrameOnReturn": true,
+        "memoryBounded": true,
+        "resourcesReleased": true,
+        "finalSeek": true,
+        "noScriptErrors": true
+      },
+      "scroll": {
+        "uniqueFrames": 7,
+        "p95FrameIntervalMs": 1017,
+        "maxFrameIntervalMs": 1017,
+        "note": "Browser animation ticks are throttled; these intervals cannot establish physical-device frame rate."
+      },
+      "stages": {
+        "initial": {
+          "diagnostics": {
+            "running": 0,
+            "queued": 0,
+            "sequences": [
+              {
+                "frame": 1,
+                "target": 1,
+                "active": true,
+                "near": true,
+                "decoded": 10,
+                "bytes": 36864000
+              }
+            ],
+            "avatar": "avatar-sec",
+            "videos": [
+              {
+                "loaded": false,
+                "time": 0,
+                "target": 0,
+                "seeking": false
+              }
+            ]
+          },
+          "navigation": [
+            {
+              "ttfb": 0.19999999995343387,
+              "bytes": 0,
+              "encoded": 2775
+            }
+          ],
+          "resourceCount": 13,
+          "longTasks": [],
+          "errors": []
+        },
+        "end": {
+          "diagnostics": {
+            "running": 0,
+            "queued": 0,
+            "sequences": [
+              {
+                "frame": 61,
+                "target": 61,
+                "active": true,
+                "near": true,
+                "decoded": 18,
+                "bytes": 66355200
+              }
+            ],
+            "avatar": "avatar-sec",
+            "videos": [
+              {
+                "loaded": false,
+                "time": 0,
+                "target": 0,
+                "seeking": false
+              }
+            ]
+          },
+          "navigation": [
+            {
+              "ttfb": 0.19999999995343387,
+              "bytes": 0,
+              "encoded": 2775
+            }
+          ],
+          "resourceCount": 37,
+          "longTasks": [],
+          "errors": []
+        },
+        "reverse": {
+          "diagnostics": {
+            "running": 0,
+            "queued": 0,
+            "sequences": [
+              {
+                "frame": 1,
+                "target": 1,
+                "active": true,
+                "near": true,
+                "decoded": 18,
+                "bytes": 66355200
+              }
+            ],
+            "avatar": "avatar-sec",
+            "videos": [
+              {
+                "loaded": false,
+                "time": 0,
+                "target": 0,
+                "seeking": false
+              }
+            ]
+          },
+          "navigation": [
+            {
+              "ttfb": 0.19999999995343387,
+              "bytes": 0,
+              "encoded": 2775
+            }
+          ],
+          "resourceCount": 59,
+          "longTasks": [],
+          "errors": []
+        },
+        "avatar": {
+          "diagnostics": {
+            "running": 0,
+            "queued": 0,
+            "sequences": [
+              {
+                "frame": 1,
+                "target": 1,
+                "active": false,
+                "near": false,
+                "decoded": 0,
+                "bytes": 0
+              }
+            ],
+            "avatar": "avatar-sec avatar-fallback",
+            "videos": [
+              {
+                "loaded": false,
+                "time": 0,
+                "target": 0,
+                "seeking": false
+              }
+            ]
+          },
+          "navigation": [
+            {
+              "ttfb": 0.19999999995343387,
+              "bytes": 0,
+              "encoded": 2775
+            }
+          ],
+          "resourceCount": 60,
+          "longTasks": [],
+          "errors": []
+        },
+        "video": {
+          "diagnostics": {
+            "running": 0,
+            "queued": 0,
+            "sequences": [
+              {
+                "frame": 1,
+                "target": 1,
+                "active": false,
+                "near": false,
+                "decoded": 0,
+                "bytes": 0
+              }
+            ],
+            "avatar": "avatar-sec avatar-fallback",
+            "videos": [
+              {
+                "loaded": true,
+                "time": 0.508333,
+                "target": 0.50833325,
+                "seeking": false
+              }
+            ]
+          },
+          "navigation": [
+            {
+              "ttfb": 0.19999999995343387,
+              "bytes": 0,
+              "encoded": 2775
+            }
+          ],
+          "resourceCount": 62,
+          "longTasks": [],
+          "errors": []
+        },
+        "released": {
+          "diagnostics": {
+            "running": 0,
+            "queued": 0,
+            "sequences": [
+              {
+                "frame": 1,
+                "target": 1,
+                "active": false,
+                "near": false,
+                "decoded": 0,
+                "bytes": 0
+              }
+            ],
+            "avatar": "avatar-sec avatar-fallback",
+            "videos": [
+              {
+                "loaded": false,
+                "time": 0,
+                "target": 0.50833325,
+                "seeking": false
+              }
+            ]
+          },
+          "navigation": [
+            {
+              "ttfb": 0.19999999995343387,
+              "bytes": 0,
+              "encoded": 2775
+            }
+          ],
+          "resourceCount": 62,
+          "longTasks": [],
+          "errors": []
+        }
+      },
+      "initialResources": [
+        {
+          "name": "frame-001.webp",
+          "url": "https://flipmedianl.github.io/mijn-web/frames/frame-001.webp",
+          "bytes": 0,
+          "encoded": 60378,
+          "duration": 6
+        },
+        {
+          "name": "site.css?v=8",
+          "url": "https://flipmedianl.github.io/mijn-web/assets/css/site.css?v=8",
+          "bytes": 0,
+          "encoded": 2904,
+          "duration": 6
+        },
+        {
+          "name": "site.js?v=9",
+          "url": "https://flipmedianl.github.io/mijn-web/assets/js/site.js?v=9",
+          "bytes": 0,
+          "encoded": 4399,
+          "duration": 7
+        },
+        {
+          "name": "frame-001.webp",
+          "url": "https://flipmedianl.github.io/mijn-web/frames/frame-001.webp",
+          "bytes": 0,
+          "encoded": 60378,
+          "duration": 8
+        },
+        {
+          "name": "frame-002.webp",
+          "url": "https://flipmedianl.github.io/mijn-web/frames/frame-002.webp",
+          "bytes": 0,
+          "encoded": 59418,
+          "duration": 8
+        },
+        {
+          "name": "frame-003.webp",
+          "url": "https://flipmedianl.github.io/mijn-web/frames/frame-003.webp",
+          "bytes": 0,
+          "encoded": 60988,
+          "duration": 8
+        },
+        {
+          "name": "frame-004.webp",
+          "url": "https://flipmedianl.github.io/mijn-web/frames/frame-004.webp",
+          "bytes": 0,
+          "encoded": 59856,
+          "duration": 8
+        },
+        {
+          "name": "frame-005.webp",
+          "url": "https://flipmedianl.github.io/mijn-web/frames/frame-005.webp",
+          "bytes": 0,
+          "encoded": 61912,
+          "duration": 8
+        },
+        {
+          "name": "frame-006.webp",
+          "url": "https://flipmedianl.github.io/mijn-web/frames/frame-006.webp",
+          "bytes": 0,
+          "encoded": 60416,
+          "duration": 8
+        },
+        {
+          "name": "frame-007.webp",
+          "url": "https://flipmedianl.github.io/mijn-web/frames/frame-007.webp",
+          "bytes": 0,
+          "encoded": 59446,
+          "duration": 9
+        },
+        {
+          "name": "frame-008.webp",
+          "url": "https://flipmedianl.github.io/mijn-web/frames/frame-008.webp",
+          "bytes": 0,
+          "encoded": 60722,
+          "duration": 9
+        },
+        {
+          "name": "frame-009.webp",
+          "url": "https://flipmedianl.github.io/mijn-web/frames/frame-009.webp",
+          "bytes": 0,
+          "encoded": 61486,
+          "duration": 9
+        },
+        {
+          "name": "frame-010.webp",
+          "url": "https://flipmedianl.github.io/mijn-web/frames/frame-010.webp",
+          "bytes": 0,
+          "encoded": 59414,
+          "duration": 9
+        }
+      ]
+    },
+    {
+      "label": "after-mobile-fresh",
+      "checks": {
+        "noEarlyHeavyMedia": true,
+        "lastFrame": true,
+        "firstFrameOnReturn": true,
+        "memoryBounded": true,
+        "resourcesReleased": true,
+        "finalSeek": true,
+        "noScriptErrors": true
+      },
+      "scroll": {
+        "uniqueFrames": 7,
+        "p95FrameIntervalMs": 1017,
+        "maxFrameIntervalMs": 1017,
+        "note": "Browser animation ticks are throttled; these intervals cannot establish physical-device frame rate."
+      },
+      "stages": {
+        "initial": {
+          "diagnostics": {
+            "running": 0,
+            "queued": 0,
+            "sequences": [
+              {
+                "frame": 1,
+                "target": 1,
+                "active": true,
+                "near": true,
+                "decoded": 13,
+                "bytes": 20217600
+              }
+            ],
+            "avatar": "avatar-sec",
+            "videos": [
+              {
+                "loaded": false,
+                "time": 0,
+                "target": 0,
+                "seeking": false
+              }
+            ]
+          },
+          "navigation": [
+            {
+              "ttfb": 0.19999999995343387,
+              "bytes": 0,
+              "encoded": 2775
+            }
+          ],
+          "resourceCount": 16,
+          "longTasks": [],
+          "errors": []
+        },
+        "end": {
+          "diagnostics": {
+            "running": 0,
+            "queued": 0,
+            "sequences": [
+              {
+                "frame": 61,
+                "target": 61,
+                "active": true,
+                "near": true,
+                "decoded": 21,
+                "bytes": 32659200
+              }
+            ],
+            "avatar": "avatar-sec",
+            "videos": [
+              {
+                "loaded": false,
+                "time": 0,
+                "target": 0,
+                "seeking": false
+              }
+            ]
+          },
+          "navigation": [
+            {
+              "ttfb": 0.19999999995343387,
+              "bytes": 0,
+              "encoded": 2775
+            }
+          ],
+          "resourceCount": 42,
+          "longTasks": [],
+          "errors": []
+        },
+        "reverse": {
+          "diagnostics": {
+            "running": 0,
+            "queued": 0,
+            "sequences": [
+              {
+                "frame": 1,
+                "target": 1,
+                "active": true,
+                "near": true,
+                "decoded": 21,
+                "bytes": 32659200
+              }
+            ],
+            "avatar": "avatar-sec",
+            "videos": [
+              {
+                "loaded": false,
+                "time": 0,
+                "target": 0,
+                "seeking": false
+              }
+            ]
+          },
+          "navigation": [
+            {
+              "ttfb": 0.19999999995343387,
+              "bytes": 0,
+              "encoded": 2775
+            }
+          ],
+          "resourceCount": 65,
+          "longTasks": [],
+          "errors": []
+        },
+        "avatar": {
+          "diagnostics": {
+            "running": 0,
+            "queued": 0,
+            "sequences": [
+              {
+                "frame": 1,
+                "target": 1,
+                "active": false,
+                "near": false,
+                "decoded": 0,
+                "bytes": 0
+              }
+            ],
+            "avatar": "avatar-sec avatar-fallback",
+            "videos": [
+              {
+                "loaded": false,
+                "time": 0,
+                "target": 0,
+                "seeking": false
+              }
+            ]
+          },
+          "navigation": [
+            {
+              "ttfb": 0.19999999995343387,
+              "bytes": 0,
+              "encoded": 2775
+            }
+          ],
+          "resourceCount": 66,
+          "longTasks": [],
+          "errors": []
+        },
+        "video": {
+          "diagnostics": {
+            "running": 0,
+            "queued": 0,
+            "sequences": [
+              {
+                "frame": 1,
+                "target": 1,
+                "active": false,
+                "near": false,
+                "decoded": 0,
+                "bytes": 0
+              }
+            ],
+            "avatar": "avatar-sec avatar-fallback",
+            "videos": [
+              {
+                "loaded": true,
+                "time": 1.999999,
+                "target": 2.033333,
+                "seeking": false
+              }
+            ]
+          },
+          "navigation": [
+            {
+              "ttfb": 0.19999999995343387,
+              "bytes": 0,
+              "encoded": 2775
+            }
+          ],
+          "resourceCount": 68,
+          "longTasks": [],
+          "errors": []
+        },
+        "released": {
+          "diagnostics": {
+            "running": 0,
+            "queued": 0,
+            "sequences": [
+              {
+                "frame": 1,
+                "target": 1,
+                "active": false,
+                "near": false,
+                "decoded": 0,
+                "bytes": 0
+              }
+            ],
+            "avatar": "avatar-sec avatar-fallback",
+            "videos": [
+              {
+                "loaded": false,
+                "time": 0,
+                "target": 2.033333,
+                "seeking": false
+              }
+            ]
+          },
+          "navigation": [
+            {
+              "ttfb": 0.19999999995343387,
+              "bytes": 0,
+              "encoded": 2775
+            }
+          ],
+          "resourceCount": 68,
+          "longTasks": [],
+          "errors": []
+        }
+      },
+      "initialResources": [
+        {
+          "name": "frame-001.webp",
+          "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-001.webp",
+          "bytes": 0,
+          "encoded": 20114,
+          "duration": 7
+        },
+        {
+          "name": "site.css?v=8",
+          "url": "https://flipmedianl.github.io/mijn-web/assets/css/site.css?v=8",
+          "bytes": 0,
+          "encoded": 2904,
+          "duration": 8
+        },
+        {
+          "name": "site.js?v=9",
+          "url": "https://flipmedianl.github.io/mijn-web/assets/js/site.js?v=9",
+          "bytes": 0,
+          "encoded": 4399,
+          "duration": 9
+        },
+        {
+          "name": "frame-001.webp",
+          "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-001.webp",
+          "bytes": 0,
+          "encoded": 20114,
+          "duration": 20
+        },
+        {
+          "name": "frame-002.webp",
+          "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-002.webp",
+          "bytes": 0,
+          "encoded": 19832,
+          "duration": 20
+        },
+        {
+          "name": "frame-003.webp",
+          "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-003.webp",
+          "bytes": 0,
+          "encoded": 20288,
+          "duration": 20
+        },
+        {
+          "name": "frame-004.webp",
+          "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-004.webp",
+          "bytes": 0,
+          "encoded": 19982,
+          "duration": 11
+        },
+        {
+          "name": "frame-005.webp",
+          "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-005.webp",
+          "bytes": 0,
+          "encoded": 20452,
+          "duration": 10
+        },
+        {
+          "name": "frame-006.webp",
+          "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-006.webp",
+          "bytes": 0,
+          "encoded": 19796,
+          "duration": 8
+        },
+        {
+          "name": "frame-007.webp",
+          "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-007.webp",
+          "bytes": 0,
+          "encoded": 19908,
+          "duration": 8
+        },
+        {
+          "name": "frame-008.webp",
+          "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-008.webp",
+          "bytes": 0,
+          "encoded": 19946,
+          "duration": 6
+        },
+        {
+          "name": "frame-009.webp",
+          "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-009.webp",
+          "bytes": 0,
+          "encoded": 20342,
+          "duration": 5
+        },
+        {
+          "name": "frame-010.webp",
+          "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-010.webp",
+          "bytes": 0,
+          "encoded": 19998,
+          "duration": 7
+        },
+        {
+          "name": "frame-011.webp",
+          "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-011.webp",
+          "bytes": 0,
+          "encoded": 20458,
+          "duration": 3
+        },
+        {
+          "name": "frame-012.webp",
+          "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-012.webp",
+          "bytes": 0,
+          "encoded": 20576,
+          "duration": 8
+        },
+        {
+          "name": "frame-013.webp",
+          "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-013.webp",
+          "bytes": 0,
+          "encoded": 21402,
+          "duration": 6
+        }
+      ]
+    }
+  ],
+  "idle": [
+    {
+      "label": "before-mobile",
+      "checks": {
+        "frame30": true,
+        "noIdleFrameRequests": false,
+        "idlePool": true
+      },
+      "extraFrameRequests": 6,
+      "before": {
+        "running": 0,
+        "queued": 0,
+        "sequences": [
+          {
+            "frame": 30,
+            "target": 30,
+            "active": true,
+            "near": true,
+            "decoded": 21,
+            "bytes": 32659200
+          }
+        ],
+        "avatar": "avatar-sec",
+        "videos": [
+          {
+            "loaded": false,
+            "time": 0,
+            "target": 0,
+            "seeking": false
+          }
+        ]
+      },
+      "after": {
+        "running": 0,
+        "queued": 0,
+        "sequences": [
+          {
+            "frame": 30,
+            "target": 30,
+            "active": true,
+            "near": true,
+            "decoded": 21,
+            "bytes": 32659200
+          }
+        ],
+        "avatar": "avatar-sec",
+        "videos": [
+          {
+            "loaded": false,
+            "time": 0,
+            "target": 0,
+            "seeking": false
+          }
+        ]
+      },
+      "extraRequests": [
+        {
+          "name": "frame-041.webp",
+          "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-041.webp",
+          "bytes": 0,
+          "encoded": 29074,
+          "duration": 3
+        },
+        {
+          "name": "frame-042.webp",
+          "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-042.webp",
+          "bytes": 0,
+          "encoded": 27904,
+          "duration": 3
+        },
+        {
+          "name": "frame-041.webp",
+          "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-041.webp",
+          "bytes": 0,
+          "encoded": 29074,
+          "duration": 4
+        },
+        {
+          "name": "frame-042.webp",
+          "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-042.webp",
+          "bytes": 0,
+          "encoded": 27904,
+          "duration": 3
+        },
+        {
+          "name": "frame-041.webp",
+          "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-041.webp",
+          "bytes": 0,
+          "encoded": 29074,
+          "duration": 4
+        },
+        {
+          "name": "frame-042.webp",
+          "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-042.webp",
+          "bytes": 0,
+          "encoded": 27904,
+          "duration": 4
+        }
+      ]
+    },
+    {
+      "label": "after-mobile",
+      "checks": {
+        "frame30": true,
+        "noIdleFrameRequests": true,
+        "idlePool": true
+      },
+      "extraFrameRequests": 0,
+      "before": {
+        "running": 0,
+        "queued": 0,
+        "sequences": [
+          {
+            "frame": 30,
+            "target": 30,
+            "active": true,
+            "near": true,
+            "decoded": 21,
+            "bytes": 32659200
+          }
+        ],
+        "avatar": "avatar-sec",
+        "videos": [
+          {
+            "loaded": false,
+            "time": 0,
+            "target": 0,
+            "seeking": false
+          }
+        ]
+      },
+      "after": {
+        "running": 0,
+        "queued": 0,
+        "sequences": [
+          {
+            "frame": 30,
+            "target": 30,
+            "active": true,
+            "near": true,
+            "decoded": 21,
+            "bytes": 32659200
+          }
+        ],
+        "avatar": "avatar-sec",
+        "videos": [
+          {
+            "loaded": false,
+            "time": 0,
+            "target": 0,
+            "seeking": false
+          }
+        ]
+      },
+      "extraRequests": []
+    }
+  ],
+  "limitations": [
+    "Cloud browser animation callbacks ~1 Hz; not a physical-phone frame-rate test.",
+    "WebGL unavailable; avatar fallback tested, GPU and physical iOS Safari not tested.",
+    "Two failed PSI post-change URL-resolution attempts excluded; API anonymous quota exceeded; successful PSI UI runs used."
+  ]
+}

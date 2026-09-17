@@ -1,0 +1,109 @@
+{
+  "before_commit": "d1506f08c511aff270d35c7f3b775bb47d8a5f76",
+  "fix_commit": "00ac4f72fadfc623ba1c1316fdaa97a45b9c5f72",
+  "production_hashes": {
+    "index.html": {
+      "sha256": "6d9b28bda9128f39bb1e19983eb86dbf408b418353b83024f9c2031b6f670e7a",
+      "matches": true
+    },
+    "assets/js/site.js": {
+      "sha256": "04fdbdbcdb8abb710248e57c4394ba964643d8164c3b44e3762cbc35390a6333",
+      "matches": true
+    }
+  },
+  "network_before": [
+    {
+      "url_effective": "https://flipmedianl.github.io/mijn-web/",
+      "http_code": 200,
+      "redirect_url": null,
+      "size_download": 2772,
+      "time_starttransfer": 7.67996,
+      "time_connect": 0.000148,
+      "time_total": 7.680061,
+      "num_redirects": 0
+    },
+    {
+      "url_effective": "https://flipmedianl.github.io/mijn-web/",
+      "http_code": 200,
+      "redirect_url": null,
+      "size_download": 2772,
+      "time_starttransfer": 7.671136,
+      "time_connect": 0.000141,
+      "time_total": 7.671508,
+      "num_redirects": 0
+    },
+    {
+      "url_effective": "https://flipmedianl.github.io/mijn-web/",
+      "http_code": 200,
+      "redirect_url": null,
+      "size_download": 2772,
+      "time_starttransfer": 7.675272,
+      "time_connect": 0.000309,
+      "time_total": 7.675386,
+      "num_redirects": 0
+    },
+    {
+      "url_effective": "http://flipmedianl.github.io/mijn-web/",
+      "http_code": 301,
+      "redirect_url": "https://flipmedianl.github.io/mijn-web/",
+      "size_download": 162,
+      "time_starttransfer": 6.735045,
+      "time_connect": 0.000141,
+      "time_total": 6.776663,
+      "num_redirects": 0
+    },
+    {
+      "url_effective": "https://flipmedianl.github.io/mijn-web",
+      "http_code": 301,
+      "redirect_url": "https://flipmedianl.github.io/mijn-web/",
+      "size_download": 162,
+      "time_starttransfer": 0.984705,
+      "time_connect": 0.000119,
+      "time_total": 0.984779,
+      "num_redirects": 0
+    },
+    {
+      "url_effective": "https://flipmedianl.github.io/mijn-web/assets/js/site.js?v=8",
+      "http_code": 200,
+      "redirect_url": null,
+      "size_download": 4279,
+      "time_starttransfer": 7.569736,
+      "time_connect": 0.000106,
+      "time_total": 7.569969,
+      "num_redirects": 0
+    },
+    {
+      "url_effective": "https://flipmedianl.github.io/mijn-web/assets/css/site.css?v=8",
+      "http_code": 200,
+      "redirect_url": null,
+      "size_download": 2904,
+      "time_starttransfer": 7.458115,
+      "time_connect": 9.5e-05,
+      "time_total": 7.458255,
+      "num_redirects": 0
+    }
+  ],
+  "network_after": [
+    {
+      "url_effective": "https://flipmedianl.github.io/mijn-web/",
+      "http_code": 200,
+      "size_download": 2775,
+      "time_starttransfer": 8.177364,
+      "time_total": 8.177532
+    },
+    {
+      "url_effective": "https://flipmedianl.github.io/mijn-web/assets/js/site.js?v=9",
+      "http_code": 200,
+      "size_download": 4399,
+      "time_starttransfer": 8.011952,
+      "time_total": 8.054178
+    },
+    {
+      "url_effective": "https://flipmedianl.github.io/mijn-web/assets/css/site.css?v=8",
+      "http_code": 200,
+      "size_download": 2904,
+      "time_starttransfer": 7.436678,
+      "time_total": 7.436836
+    }
+  ]
+}
