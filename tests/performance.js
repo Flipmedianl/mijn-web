@@ -4,7 +4,9 @@ const wait=ms=>new Promise(r=>setTimeout(r,ms));
 function load(width,height){
   if(running)return;
   stage.replaceChildren();frame=document.createElement('iframe');frame.title='FLIPMEDIA website';frame.width=width;frame.height=height;
-  frame.src='../?audit=1&v=8';longTasks=[];errors=[];
+  // Fresh HTML for each diagnostic run; versioned media keep their normal cache.
+  frame.src='../?audit=1&testRun='+Date.now();longTasks=[];errors=[];
+  report.textContent='Website laden…';
   frame.onload=()=>{
     const w=frame.contentWindow;
     w.addEventListener('error',e=>errors.push(e.message));
