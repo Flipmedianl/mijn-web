@@ -1,0 +1,1060 @@
+{
+  "productionTests": [
+    {
+      "label": "mobile",
+      "initial": {
+        "viewport": [
+          390,
+          844
+        ],
+        "diagnostics": {
+          "chapters": [
+            {
+              "chapter": "1",
+              "state": "playing",
+              "active": true,
+              "loaded": true,
+              "time": 0.076047,
+              "paused": false,
+              "completed": false,
+              "src": "https://flipmedianl.github.io/mijn-web/assets/video/chapter-1-mobile.mp4",
+              "plays": 1,
+              "seeks": 0,
+              "unloads": 0
+            },
+            {
+              "chapter": "2",
+              "state": "ready",
+              "active": false,
+              "loaded": false,
+              "time": 0,
+              "paused": true,
+              "completed": false,
+              "src": null,
+              "plays": 0,
+              "seeks": 0,
+              "unloads": 0
+            }
+          ],
+          "avatar": "avatar-sec"
+        },
+        "resources": [
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-001.webp",
+            "bytes": 20414,
+            "encoded": 20114,
+            "initiator": "link"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/css/site.css?v=10",
+            "bytes": 3519,
+            "encoded": 3219,
+            "initiator": "link"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/js/site.js?v=10",
+            "bytes": 1547,
+            "encoded": 1247,
+            "initiator": "script"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/js/cinematic.js?v=1",
+            "bytes": 2456,
+            "encoded": 2156,
+            "initiator": "script"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/video/chapter-1-mobile.mp4",
+            "bytes": 616487,
+            "encoded": 616187,
+            "initiator": "video"
+          }
+        ],
+        "errors": [],
+        "longTasks": []
+      },
+      "stationary": {
+        "viewport": [
+          390,
+          844
+        ],
+        "diagnostics": {
+          "chapters": [
+            {
+              "chapter": "1",
+              "state": "playing",
+              "active": true,
+              "loaded": true,
+              "time": 0.976655,
+              "paused": false,
+              "completed": false,
+              "src": "https://flipmedianl.github.io/mijn-web/assets/video/chapter-1-mobile.mp4",
+              "plays": 1,
+              "seeks": 0,
+              "unloads": 0
+            },
+            {
+              "chapter": "2",
+              "state": "ready",
+              "active": false,
+              "loaded": false,
+              "time": 0,
+              "paused": true,
+              "completed": false,
+              "src": null,
+              "plays": 0,
+              "seeks": 0,
+              "unloads": 0
+            }
+          ],
+          "avatar": "avatar-sec"
+        },
+        "resources": [
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-001.webp",
+            "bytes": 20414,
+            "encoded": 20114,
+            "initiator": "link"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/css/site.css?v=10",
+            "bytes": 3519,
+            "encoded": 3219,
+            "initiator": "link"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/js/site.js?v=10",
+            "bytes": 1547,
+            "encoded": 1247,
+            "initiator": "script"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/js/cinematic.js?v=1",
+            "bytes": 2456,
+            "encoded": 2156,
+            "initiator": "script"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/video/chapter-1-mobile.mp4",
+            "bytes": 616487,
+            "encoded": 616187,
+            "initiator": "video"
+          }
+        ],
+        "errors": [],
+        "longTasks": []
+      },
+      "movesWithoutScroll": true,
+      "end": {
+        "viewport": [
+          390,
+          844
+        ],
+        "diagnostics": {
+          "chapters": [
+            {
+              "chapter": "1",
+              "state": "ended",
+              "active": true,
+              "loaded": true,
+              "time": 3.6,
+              "paused": true,
+              "completed": true,
+              "src": "https://flipmedianl.github.io/mijn-web/assets/video/chapter-1-mobile.mp4",
+              "plays": 1,
+              "seeks": 0,
+              "unloads": 0
+            },
+            {
+              "chapter": "2",
+              "state": "ready",
+              "active": false,
+              "loaded": false,
+              "time": 0,
+              "paused": true,
+              "completed": false,
+              "src": null,
+              "plays": 0,
+              "seeks": 0,
+              "unloads": 0
+            }
+          ],
+          "avatar": "avatar-sec"
+        },
+        "resources": [
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-001.webp",
+            "bytes": 20414,
+            "encoded": 20114,
+            "initiator": "link"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/css/site.css?v=10",
+            "bytes": 3519,
+            "encoded": 3219,
+            "initiator": "link"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/js/site.js?v=10",
+            "bytes": 1547,
+            "encoded": 1247,
+            "initiator": "script"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/js/cinematic.js?v=1",
+            "bytes": 2456,
+            "encoded": 2156,
+            "initiator": "script"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/video/chapter-1-mobile.mp4",
+            "bytes": 616487,
+            "encoded": 616187,
+            "initiator": "video"
+          }
+        ],
+        "errors": [],
+        "longTasks": []
+      },
+      "userPause": true,
+      "resume": true,
+      "avatar": {
+        "viewport": [
+          390,
+          844
+        ],
+        "diagnostics": {
+          "chapters": [
+            {
+              "chapter": "1",
+              "state": "ready",
+              "active": false,
+              "loaded": false,
+              "time": 0,
+              "paused": true,
+              "completed": false,
+              "src": "https://flipmedianl.github.io/mijn-web/assets/video/chapter-1-mobile.mp4",
+              "plays": 3,
+              "seeks": 0,
+              "unloads": 1
+            },
+            {
+              "chapter": "2",
+              "state": "ready",
+              "active": false,
+              "loaded": false,
+              "time": 0,
+              "paused": true,
+              "completed": false,
+              "src": null,
+              "plays": 0,
+              "seeks": 0,
+              "unloads": 0
+            }
+          ],
+          "avatar": "avatar-sec avatar-fallback"
+        },
+        "resources": [
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-001.webp",
+            "bytes": 20414,
+            "encoded": 20114,
+            "initiator": "link"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/css/site.css?v=10",
+            "bytes": 3519,
+            "encoded": 3219,
+            "initiator": "link"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/js/site.js?v=10",
+            "bytes": 1547,
+            "encoded": 1247,
+            "initiator": "script"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/js/cinematic.js?v=1",
+            "bytes": 2456,
+            "encoded": 2156,
+            "initiator": "script"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/video/chapter-1-mobile.mp4",
+            "bytes": 616487,
+            "encoded": 616187,
+            "initiator": "video"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-061.webp",
+            "bytes": 0,
+            "encoded": 0,
+            "initiator": "img"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/video/chapter-2-start-mobile.webp",
+            "bytes": 69734,
+            "encoded": 69434,
+            "initiator": "img"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/js/avatar.js?v=8",
+            "bytes": 1150,
+            "encoded": 850,
+            "initiator": "script"
+          }
+        ],
+        "errors": [],
+        "longTasks": []
+      },
+      "secondMovesWithoutScroll": true,
+      "second": {
+        "viewport": [
+          390,
+          844
+        ],
+        "diagnostics": {
+          "chapters": [
+            {
+              "chapter": "1",
+              "state": "ready",
+              "active": false,
+              "loaded": false,
+              "time": 0,
+              "paused": true,
+              "completed": false,
+              "src": "https://flipmedianl.github.io/mijn-web/assets/video/chapter-1-mobile.mp4",
+              "plays": 3,
+              "seeks": 0,
+              "unloads": 1
+            },
+            {
+              "chapter": "2",
+              "state": "ended",
+              "active": true,
+              "loaded": true,
+              "time": 3.6,
+              "paused": true,
+              "completed": true,
+              "src": "https://flipmedianl.github.io/mijn-web/assets/video/chapter-2-mobile.mp4",
+              "plays": 1,
+              "seeks": 0,
+              "unloads": 0
+            }
+          ],
+          "avatar": "avatar-sec avatar-fallback"
+        },
+        "resources": [
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-001.webp",
+            "bytes": 20414,
+            "encoded": 20114,
+            "initiator": "link"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/css/site.css?v=10",
+            "bytes": 3519,
+            "encoded": 3219,
+            "initiator": "link"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/js/site.js?v=10",
+            "bytes": 1547,
+            "encoded": 1247,
+            "initiator": "script"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/js/cinematic.js?v=1",
+            "bytes": 2456,
+            "encoded": 2156,
+            "initiator": "script"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/video/chapter-1-mobile.mp4",
+            "bytes": 616487,
+            "encoded": 616187,
+            "initiator": "video"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-061.webp",
+            "bytes": 0,
+            "encoded": 0,
+            "initiator": "img"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/video/chapter-2-start-mobile.webp",
+            "bytes": 69734,
+            "encoded": 69434,
+            "initiator": "img"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/js/avatar.js?v=8",
+            "bytes": 1150,
+            "encoded": 850,
+            "initiator": "script"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/video/chapter-2-mobile.mp4",
+            "bytes": 840367,
+            "encoded": 840067,
+            "initiator": "video"
+          }
+        ],
+        "errors": [],
+        "longTasks": []
+      },
+      "released": {
+        "viewport": [
+          390,
+          844
+        ],
+        "diagnostics": {
+          "chapters": [
+            {
+              "chapter": "1",
+              "state": "ready",
+              "active": false,
+              "loaded": false,
+              "time": 0,
+              "paused": true,
+              "completed": false,
+              "src": "https://flipmedianl.github.io/mijn-web/assets/video/chapter-1-mobile.mp4",
+              "plays": 3,
+              "seeks": 0,
+              "unloads": 1
+            },
+            {
+              "chapter": "2",
+              "state": "ended",
+              "active": false,
+              "loaded": false,
+              "time": 0,
+              "paused": true,
+              "completed": true,
+              "src": "https://flipmedianl.github.io/mijn-web/assets/video/chapter-2-mobile.mp4",
+              "plays": 1,
+              "seeks": 0,
+              "unloads": 1
+            }
+          ],
+          "avatar": "avatar-sec avatar-fallback"
+        },
+        "resources": [
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-001.webp",
+            "bytes": 20414,
+            "encoded": 20114,
+            "initiator": "link"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/css/site.css?v=10",
+            "bytes": 3519,
+            "encoded": 3219,
+            "initiator": "link"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/js/site.js?v=10",
+            "bytes": 1547,
+            "encoded": 1247,
+            "initiator": "script"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/js/cinematic.js?v=1",
+            "bytes": 2456,
+            "encoded": 2156,
+            "initiator": "script"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/video/chapter-1-mobile.mp4",
+            "bytes": 616487,
+            "encoded": 616187,
+            "initiator": "video"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-061.webp",
+            "bytes": 0,
+            "encoded": 0,
+            "initiator": "img"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/video/chapter-2-start-mobile.webp",
+            "bytes": 69734,
+            "encoded": 69434,
+            "initiator": "img"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/js/avatar.js?v=8",
+            "bytes": 1150,
+            "encoded": 850,
+            "initiator": "script"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/video/chapter-2-mobile.mp4",
+            "bytes": 840367,
+            "encoded": 840067,
+            "initiator": "video"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/video/chapter-2-end-mobile.webp",
+            "bytes": 82820,
+            "encoded": 82520,
+            "initiator": "img"
+          }
+        ],
+        "errors": [],
+        "longTasks": []
+      },
+      "checks": {
+        "noFrameDecoderRequests": true,
+        "noEarlyChapter2": true,
+        "independentPlayback": true,
+        "deliberateEnd": true,
+        "noScrollSeeks": true,
+        "pauseResume": true,
+        "resourcesReleased": true,
+        "distinctChapters": true,
+        "shortIntro": true,
+        "avatarPreserved": true,
+        "noScriptErrors": true
+      }
+    },
+    {
+      "label": "desktop",
+      "initial": {
+        "viewport": [
+          1280,
+          800
+        ],
+        "diagnostics": {
+          "chapters": [
+            {
+              "chapter": "1",
+              "state": "playing",
+              "active": true,
+              "loaded": true,
+              "time": 0.010586,
+              "paused": false,
+              "completed": false,
+              "src": "https://flipmedianl.github.io/mijn-web/assets/video/chapter-1-desktop.mp4",
+              "plays": 1,
+              "seeks": 0,
+              "unloads": 0
+            },
+            {
+              "chapter": "2",
+              "state": "ready",
+              "active": false,
+              "loaded": false,
+              "time": 0,
+              "paused": true,
+              "completed": false,
+              "src": null,
+              "plays": 0,
+              "seeks": 0,
+              "unloads": 0
+            }
+          ],
+          "avatar": "avatar-sec"
+        },
+        "resources": [
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/frames/frame-001.webp",
+            "bytes": 0,
+            "encoded": 60378,
+            "initiator": "link"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/css/site.css?v=10",
+            "bytes": 0,
+            "encoded": 3219,
+            "initiator": "link"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/js/site.js?v=10",
+            "bytes": 0,
+            "encoded": 1247,
+            "initiator": "script"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/js/cinematic.js?v=1",
+            "bytes": 0,
+            "encoded": 2156,
+            "initiator": "script"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/video/chapter-1-desktop.mp4",
+            "bytes": 0,
+            "encoded": 1316737,
+            "initiator": "video"
+          }
+        ],
+        "errors": [],
+        "longTasks": []
+      },
+      "stationary": {
+        "viewport": [
+          1280,
+          800
+        ],
+        "diagnostics": {
+          "chapters": [
+            {
+              "chapter": "1",
+              "state": "playing",
+              "active": true,
+              "loaded": true,
+              "time": 0.911212,
+              "paused": false,
+              "completed": false,
+              "src": "https://flipmedianl.github.io/mijn-web/assets/video/chapter-1-desktop.mp4",
+              "plays": 1,
+              "seeks": 0,
+              "unloads": 0
+            },
+            {
+              "chapter": "2",
+              "state": "ready",
+              "active": false,
+              "loaded": false,
+              "time": 0,
+              "paused": true,
+              "completed": false,
+              "src": null,
+              "plays": 0,
+              "seeks": 0,
+              "unloads": 0
+            }
+          ],
+          "avatar": "avatar-sec"
+        },
+        "resources": [
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/frames/frame-001.webp",
+            "bytes": 0,
+            "encoded": 60378,
+            "initiator": "link"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/css/site.css?v=10",
+            "bytes": 0,
+            "encoded": 3219,
+            "initiator": "link"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/js/site.js?v=10",
+            "bytes": 0,
+            "encoded": 1247,
+            "initiator": "script"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/js/cinematic.js?v=1",
+            "bytes": 0,
+            "encoded": 2156,
+            "initiator": "script"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/video/chapter-1-desktop.mp4",
+            "bytes": 0,
+            "encoded": 1316737,
+            "initiator": "video"
+          }
+        ],
+        "errors": [],
+        "longTasks": []
+      },
+      "movesWithoutScroll": true,
+      "end": {
+        "viewport": [
+          1280,
+          800
+        ],
+        "diagnostics": {
+          "chapters": [
+            {
+              "chapter": "1",
+              "state": "ended",
+              "active": true,
+              "loaded": false,
+              "time": 0,
+              "paused": true,
+              "completed": true,
+              "src": "https://flipmedianl.github.io/mijn-web/assets/video/chapter-1-desktop.mp4",
+              "plays": 1,
+              "seeks": 0,
+              "unloads": 1
+            },
+            {
+              "chapter": "2",
+              "state": "ready",
+              "active": false,
+              "loaded": false,
+              "time": 0,
+              "paused": true,
+              "completed": false,
+              "src": null,
+              "plays": 0,
+              "seeks": 0,
+              "unloads": 0
+            }
+          ],
+          "avatar": "avatar-sec"
+        },
+        "resources": [
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/frames/frame-001.webp",
+            "bytes": 0,
+            "encoded": 60378,
+            "initiator": "link"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/css/site.css?v=10",
+            "bytes": 0,
+            "encoded": 3219,
+            "initiator": "link"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/js/site.js?v=10",
+            "bytes": 0,
+            "encoded": 1247,
+            "initiator": "script"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/js/cinematic.js?v=1",
+            "bytes": 0,
+            "encoded": 2156,
+            "initiator": "script"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/video/chapter-1-desktop.mp4",
+            "bytes": 0,
+            "encoded": 1316737,
+            "initiator": "video"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/frames/frame-061.webp",
+            "bytes": 0,
+            "encoded": 79220,
+            "initiator": "img"
+          }
+        ],
+        "errors": [],
+        "longTasks": []
+      },
+      "userPause": true,
+      "resume": true,
+      "avatar": {
+        "viewport": [
+          1280,
+          800
+        ],
+        "diagnostics": {
+          "chapters": [
+            {
+              "chapter": "1",
+              "state": "ready",
+              "active": false,
+              "loaded": false,
+              "time": 0,
+              "paused": true,
+              "completed": false,
+              "src": "https://flipmedianl.github.io/mijn-web/assets/video/chapter-1-desktop.mp4",
+              "plays": 3,
+              "seeks": 0,
+              "unloads": 2
+            },
+            {
+              "chapter": "2",
+              "state": "ready",
+              "active": false,
+              "loaded": false,
+              "time": 0,
+              "paused": true,
+              "completed": false,
+              "src": null,
+              "plays": 0,
+              "seeks": 0,
+              "unloads": 0
+            }
+          ],
+          "avatar": "avatar-sec avatar-fallback"
+        },
+        "resources": [
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/frames/frame-001.webp",
+            "bytes": 0,
+            "encoded": 60378,
+            "initiator": "link"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/css/site.css?v=10",
+            "bytes": 0,
+            "encoded": 3219,
+            "initiator": "link"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/js/site.js?v=10",
+            "bytes": 0,
+            "encoded": 1247,
+            "initiator": "script"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/js/cinematic.js?v=1",
+            "bytes": 0,
+            "encoded": 2156,
+            "initiator": "script"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/video/chapter-1-desktop.mp4",
+            "bytes": 0,
+            "encoded": 1316737,
+            "initiator": "video"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/frames/frame-061.webp",
+            "bytes": 0,
+            "encoded": 79220,
+            "initiator": "img"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/frames/frame-062.webp",
+            "bytes": 77264,
+            "encoded": 76964,
+            "initiator": "img"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/js/avatar.js?v=8",
+            "bytes": 0,
+            "encoded": 850,
+            "initiator": "script"
+          }
+        ],
+        "errors": [],
+        "longTasks": []
+      },
+      "secondMovesWithoutScroll": true,
+      "second": {
+        "viewport": [
+          1280,
+          800
+        ],
+        "diagnostics": {
+          "chapters": [
+            {
+              "chapter": "1",
+              "state": "ready",
+              "active": false,
+              "loaded": false,
+              "time": 0,
+              "paused": true,
+              "completed": false,
+              "src": "https://flipmedianl.github.io/mijn-web/assets/video/chapter-1-desktop.mp4",
+              "plays": 3,
+              "seeks": 0,
+              "unloads": 2
+            },
+            {
+              "chapter": "2",
+              "state": "ended",
+              "active": true,
+              "loaded": true,
+              "time": 3.6,
+              "paused": true,
+              "completed": true,
+              "src": "https://flipmedianl.github.io/mijn-web/assets/video/chapter-2-desktop.mp4",
+              "plays": 1,
+              "seeks": 0,
+              "unloads": 0
+            }
+          ],
+          "avatar": "avatar-sec avatar-fallback"
+        },
+        "resources": [
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/frames/frame-001.webp",
+            "bytes": 0,
+            "encoded": 60378,
+            "initiator": "link"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/css/site.css?v=10",
+            "bytes": 0,
+            "encoded": 3219,
+            "initiator": "link"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/js/site.js?v=10",
+            "bytes": 0,
+            "encoded": 1247,
+            "initiator": "script"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/js/cinematic.js?v=1",
+            "bytes": 0,
+            "encoded": 2156,
+            "initiator": "script"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/video/chapter-1-desktop.mp4",
+            "bytes": 0,
+            "encoded": 1316737,
+            "initiator": "video"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/frames/frame-061.webp",
+            "bytes": 0,
+            "encoded": 79220,
+            "initiator": "img"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/frames/frame-062.webp",
+            "bytes": 77264,
+            "encoded": 76964,
+            "initiator": "img"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/js/avatar.js?v=8",
+            "bytes": 0,
+            "encoded": 850,
+            "initiator": "script"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/video/chapter-2-desktop.mp4",
+            "bytes": 1655946,
+            "encoded": 1655646,
+            "initiator": "video"
+          }
+        ],
+        "errors": [],
+        "longTasks": []
+      },
+      "released": {
+        "viewport": [
+          1280,
+          800
+        ],
+        "diagnostics": {
+          "chapters": [
+            {
+              "chapter": "1",
+              "state": "ready",
+              "active": false,
+              "loaded": false,
+              "time": 0,
+              "paused": true,
+              "completed": false,
+              "src": "https://flipmedianl.github.io/mijn-web/assets/video/chapter-1-desktop.mp4",
+              "plays": 3,
+              "seeks": 0,
+              "unloads": 2
+            },
+            {
+              "chapter": "2",
+              "state": "ended",
+              "active": false,
+              "loaded": false,
+              "time": 0,
+              "paused": true,
+              "completed": true,
+              "src": "https://flipmedianl.github.io/mijn-web/assets/video/chapter-2-desktop.mp4",
+              "plays": 1,
+              "seeks": 0,
+              "unloads": 1
+            }
+          ],
+          "avatar": "avatar-sec avatar-fallback"
+        },
+        "resources": [
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/frames/frame-001.webp",
+            "bytes": 0,
+            "encoded": 60378,
+            "initiator": "link"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/css/site.css?v=10",
+            "bytes": 0,
+            "encoded": 3219,
+            "initiator": "link"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/js/site.js?v=10",
+            "bytes": 0,
+            "encoded": 1247,
+            "initiator": "script"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/js/cinematic.js?v=1",
+            "bytes": 0,
+            "encoded": 2156,
+            "initiator": "script"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/video/chapter-1-desktop.mp4",
+            "bytes": 0,
+            "encoded": 1316737,
+            "initiator": "video"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/frames/frame-061.webp",
+            "bytes": 0,
+            "encoded": 79220,
+            "initiator": "img"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/frames/frame-062.webp",
+            "bytes": 77264,
+            "encoded": 76964,
+            "initiator": "img"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/js/avatar.js?v=8",
+            "bytes": 0,
+            "encoded": 850,
+            "initiator": "script"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/assets/video/chapter-2-desktop.mp4",
+            "bytes": 1655946,
+            "encoded": 1655646,
+            "initiator": "video"
+          },
+          {
+            "name": "https://flipmedianl.github.io/mijn-web/frames/frame-122.webp",
+            "bytes": 90700,
+            "encoded": 90400,
+            "initiator": "img"
+          }
+        ],
+        "errors": [],
+        "longTasks": []
+      },
+      "checks": {
+        "noFrameDecoderRequests": true,
+        "noEarlyChapter2": true,
+        "independentPlayback": true,
+        "deliberateEnd": true,
+        "noScrollSeeks": true,
+        "pauseResume": true,
+        "resourcesReleased": true,
+        "distinctChapters": true,
+        "shortIntro": true,
+        "avatarPreserved": true,
+        "noScriptErrors": true
+      }
+    }
+  ],
+  "pageSpeed": [
+    {
+      "device": "mobile",
+      "url": "https://pagespeed.web.dev/analysis/https-flipmedianl-github-io-mijn-web/drimf6urwm?form_factor=mobile",
+      "text": "Ontdek wat je echte gebruikers ervaren\nGeen gegevens\nPrestatieproblemen diagnosticeren\n100\nPrestaties\n95\nToegankelijkheid\n100\nPraktische tips\n100\nSEO\n2/2\nAgentisch browsen\n100\nFCP\n+10\nLCP\n+25\nTBT\n+30\nCLS\n+25\nSI\n+10\nPrestaties\nWaarden worden geschat en kunnen variëren. De prestatiescore wordt rechtstreeks berekend op basis van deze statistieken.Rekenmachine bekijken\n0–49\n50–89\n90–100\nSTATISTIEKEN\nWeergave uitvouwen\nFirst Contentful Paint\n0,8 s\nLargest Contentful Paint\n1,1 s\nTotal Blocking Time\n0 ms\nCumulative Layout Shift\n0.003\nSpeed Index\n2,2 s\nCaptured at 17 sep 2026, 21:24 CEST\nMoto G Power geëmuleerd with Lighthouse 13.4.1\nSessie waarbij één pagina wordt geladen\nEerste keer laden van de pagina\nLangzame 4G-throttling\nUsing HeadlessChromium 151.0.7922.71 with lr\nTreemap bekijken\nAudits laten zien die relevant zijn voor:\nAll\nFCP\nLCP\nCLS\nINZICHTEN\nVerzoeken voor renderblokkering Geschatte besparingen van 300 ms\nNetwerkafhankelijkheidsstructuur\nEfficiënte levensduur voor het cachegeheugen gebruiken Geschatte besparingen van 642 KiB\nAfbeeldingslevering verbeteren Geschatte besparingen van 26 KiB\nOorzaken van indelingsverschuivingen\nLCP-uitsplitsing\nDeze inzichten zijn ook beschikbaar in het deelvenster Prestaties van Chrome DevTools. Neem een tracering op om meer gedetailleerde informatie te bekijken.\nGESLAAGDE CONTROLES (21)\nTonen\n95\nToegankelijkheid\nDeze controles wijzen op mogelijkheden om de toegankelijkheid van je web-app te verbeteren. Automatische detectie kan alleen een subset van problemen vaststellen en biedt geen garantie voor de toegankelijkheid van je web-app. Daarom wordt ook handmatig testen aanbevolen.\nCONTRAST\nDe contrastverhouding van achtergrond- en voorgrondkleuren is niet voldoende\nDit zijn suggesties om de leesbaarheid van je content te verbeteren.\nAANVULLENDE ITEMS OM HANDMATIG TE CONTROLEREN (10)\nTonen\nDeze items gaan over gebieden die niet kunnen worden getest met een automatische testtool. Bekijk meer informatie in onze gids over het uitvoeren van een toegankelijkheidscontrole.\nGESLAAGDE CONTROLES (18)\nTonen\nN.V.T. (44)\nTonen\n100\nPraktische tips\nVERTROUWEN EN VEILIGHEID\nZorgen dat het CSP effectief is tegen XSS-aanvallen\nEen sterk HSTS-beleid gebruiken\nZorgen voor de juiste bronisolatie met COOP\nDe gevolgen van clickjacking beperken met XFO of CSP\nDOM-gebaseerde XSS beperken met Vertrouwde typen\nBROWSERCOMPATIBILITEIT\nBaseline-functies\nGESLAAGDE CONTROLES (13)\nTonen\nN.V.T. (2)\nTonen\n100\nSEO\nDeze checks zorgen ervoor dat je pagina het algemene advies voor zoekmachineoptimalisatie volgt. Er zijn veel aanvullende factoren waarvoor Lighthouse hier geen score geeft, maar die wel van invloed kunnen zijn op je zoekpositie, waaronder de prestaties voor Site-vitaliteit. Meer informatie over Google Search Essentials\nAANVULLENDE ITEMS OM HANDMATIG TE CONTROLEREN (1)\nVerbergen\nDe gestructureerde gegevens zijn geldig\nVoer deze extra validators op je site uit om aanvullende praktische tips voor SEO te controleren.\nGESLAAGDE CONTROLES (8)\nTonen\nN.V.T. (2)\nTonen\n2/2\nAgentisch browsen\nDeze checks zorgen voor websites van hoge kwaliteit die AI-agents kunnen doorzoeken en valideren de correctheid van WebMCP-integraties. Deze categorie is nog in ontwikkeling en kan worden gewijzigd.\nGESLAAGDE CONTROLES (2)\nTonen\nN.V.T. (4)\nTonen",
+      "calculator": "https://googlechrome.github.io/lighthouse/scorecalc/#FCP=794&LCP=1051&TBT=0&CLS=0&SI=2164&TTI=1051&device=mobile&version=13.4.1"
+    },
+    {
+      "device": "desktop",
+      "url": "https://pagespeed.web.dev/analysis/https-flipmedianl-github-io-mijn-web/drimf6urwm?form_factor=desktop",
+      "text": "Ontdek wat je echte gebruikers ervaren\nGeen gegevens\nPrestatieproblemen diagnosticeren\n100\nPrestaties\n95\nToegankelijkheid\n100\nPraktische tips\n100\nSEO\n2/2\nAgentisch browsen\n100\nFCP\n+10\nLCP\n+25\nTBT\n+30\nCLS\n+25\nSI\n+10\nPrestaties\nWaarden worden geschat en kunnen variëren. De prestatiescore wordt rechtstreeks berekend op basis van deze statistieken.Rekenmachine bekijken\n0–49\n50–89\n90–100\nSTATISTIEKEN\nWeergave uitvouwen\nFirst Contentful Paint\n0,2 s\nLargest Contentful Paint\n0,3 s\nTotal Blocking Time\n0 ms\nCumulative Layout Shift\n0.001\nSpeed Index\n0,4 s\nCaptured at 17 sep 2026, 21:24 CEST\nDesktopemulatie with Lighthouse 13.4.1\nSessie waarbij één pagina wordt geladen\nEerste keer laden van de pagina\nAangepaste throttling\nUsing HeadlessChromium 151.0.7922.71 with lr\nTreemap bekijken\nAudits laten zien die relevant zijn voor:\nAll\nFCP\nLCP\nCLS\nINZICHTEN\nVerzoeken voor renderblokkering Geschatte besparingen van 80 ms\nEfficiënte levensduur voor het cachegeheugen gebruiken Geschatte besparingen van 1.242 KiB\nNetwerkafhankelijkheidsstructuur\nOorzaken van indelingsverschuivingen\nLCP-uitsplitsing\nDeze inzichten zijn ook beschikbaar in het deelvenster Prestaties van Chrome DevTools. Neem een tracering op om meer gedetailleerde informatie te bekijken.\nGESLAAGDE CONTROLES (22)\nTonen\n95\nToegankelijkheid\nDeze controles wijzen op mogelijkheden om de toegankelijkheid van je web-app te verbeteren. Automatische detectie kan alleen een subset van problemen vaststellen en biedt geen garantie voor de toegankelijkheid van je web-app. Daarom wordt ook handmatig testen aanbevolen.\nCONTRAST\nDe contrastverhouding van achtergrond- en voorgrondkleuren is niet voldoende\nDit zijn suggesties om de leesbaarheid van je content te verbeteren.\nAANVULLENDE ITEMS OM HANDMATIG TE CONTROLEREN (10)\nTonen\nDeze items gaan over gebieden die niet kunnen worden getest met een automatische testtool. Bekijk meer informatie in onze gids over het uitvoeren van een toegankelijkheidscontrole.\nGESLAAGDE CONTROLES (18)\nTonen\nN.V.T. (44)\nTonen\n100\nPraktische tips\nVERTROUWEN EN VEILIGHEID\nZorgen dat het CSP effectief is tegen XSS-aanvallen\nEen sterk HSTS-beleid gebruiken\nZorgen voor de juiste bronisolatie met COOP\nDe gevolgen van clickjacking beperken met XFO of CSP\nDOM-gebaseerde XSS beperken met Vertrouwde typen\nBROWSERCOMPATIBILITEIT\nBaseline-functies\nGESLAAGDE CONTROLES (13)\nTonen\nN.V.T. (2)\nTonen\n100\nSEO\nDeze checks zorgen ervoor dat je pagina het algemene advies voor zoekmachineoptimalisatie volgt. Er zijn veel aanvullende factoren waarvoor Lighthouse hier geen score geeft, maar die wel van invloed kunnen zijn op je zoekpositie, waaronder de prestaties voor Site-vitaliteit. Meer informatie over Google Search Essentials\nAANVULLENDE ITEMS OM HANDMATIG TE CONTROLEREN (1)\nVerbergen\nDe gestructureerde gegevens zijn geldig\nVoer deze extra validators op je site uit om aanvullende praktische tips voor SEO te controleren.\nGESLAAGDE CONTROLES (8)\nTonen\nN.V.T. (2)\nTonen\n2/2\nAgentisch browsen\nDeze checks zorgen voor websites van hoge kwaliteit die AI-agents kunnen doorzoeken en valideren de correctheid van WebMCP-integraties. Deze categorie is nog in ontwikkeling en kan worden gewijzigd.\nGESLAAGDE CONTROLES (2)\nTonen\nN.V.T. (4)\nTonen",
+      "calculator": "https://googlechrome.github.io/lighthouse/scorecalc/#FCP=235&LCP=281&TBT=0&CLS=0&SI=367&TTI=281&device=desktop&version=13.4.1"
+    }
+  ]
+}

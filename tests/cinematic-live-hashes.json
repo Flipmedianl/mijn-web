@@ -1,0 +1,68 @@
+[
+  {
+    "file": "index.html",
+    "status": 200,
+    "matches": true,
+    "sha256": "e120277bf23ddabe6210ec4b5d36599bde421fa93914bcd7ceff67d01acfb8b3"
+  },
+  {
+    "file": "assets/js/site.js",
+    "status": 200,
+    "matches": true,
+    "sha256": "a62bb1583e9c43cbaf6f6340d96b40c74f224d00f3cac4383f325674fa66650e"
+  },
+  {
+    "file": "assets/js/cinematic.js",
+    "status": 200,
+    "matches": true,
+    "sha256": "f7c09f23aa6d845a8a1bcfafaf48542870bdde62946e0a66eb937e03a88c6d8b"
+  },
+  {
+    "file": "assets/css/site.css",
+    "status": 200,
+    "matches": true,
+    "sha256": "e84a656e22ab431a533f9a0473d13c0ba02619644cdf55e6b2c2a8a16f6ddf29"
+  },
+  {
+    "file": "assets/video/chapter-1-desktop.mp4",
+    "status": 200,
+    "bytes": 1316737,
+    "matches": true,
+    "sha256": "e182e929531629f1f0692f930525aa292a5578c971dd8294051b051d9d641fe7"
+  },
+  {
+    "file": "assets/video/chapter-1-mobile.mp4",
+    "status": 200,
+    "bytes": 616187,
+    "matches": true,
+    "sha256": "47af701cfc9c2b72b35f008eb1323e4a1cdf70fc78c3d4c5eed3313b28a23458"
+  },
+  {
+    "file": "assets/video/chapter-2-end-mobile.webp",
+    "status": 200,
+    "bytes": 82520,
+    "matches": true,
+    "sha256": "b689164e36d7ecee796a5ed1993d59761d0e8ab7de1f8c7f75f0a1d9893d51ae"
+  },
+  {
+    "file": "assets/video/chapter-2-mobile.mp4",
+    "status": 200,
+    "bytes": 840067,
+    "matches": true,
+    "sha256": "723c1134484a3ba4c8a63f85e014801a347869b64c5ca5528a5beb000e573b50"
+  },
+  {
+    "file": "assets/video/chapter-2-start-mobile.webp",
+    "status": 200,
+    "bytes": 69434,
+    "matches": true,
+    "sha256": "dc4317a4b59e0205111bea9fe4fe1f9d4ab66425780d94fc2227cbb7a914458f"
+  },
+  {
+    "file": "assets/video/chapter-2-desktop.mp4",
+    "status": 200,
+    "bytes": 1655646,
+    "matches": true,
+    "sha256": "9549b83133d5f3397982ebc8880681f2702a1a745171e1b2437b3a113392da7a"
+  }
+]
