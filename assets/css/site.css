@@ -21,3 +21,15 @@
 @media(prefers-reduced-motion:reduce){.hero,.overlay2,.float-card{opacity:1!important;transform:none!important}.hero,.overlay2{top:22%}.reveal{--v:1}.avatar-placeholder{transition:none}}
 
 canvas.seq{opacity:0}canvas.seq[data-frame]{opacity:1}
+
+/* Chapter playback uses the media clock, never scroll-position seeking. */
+.cinematic{height:155svh}.cinematic.two{height:145svh}
+.cinematic-video{opacity:0;transition:opacity .3s ease;pointer-events:none}
+.cinematic-playing .cinematic-video{opacity:1}
+.cinematic .hero{will-change:auto}.cinematic .overlay2{opacity:1;will-change:auto}
+.cinematic-controls{position:absolute;z-index:6;right:clamp(18px,6vw,90px);bottom:24px;display:flex;align-items:center;gap:12px;max-width:calc(100% - 36px);padding:9px 12px;border:1px solid #1112;border-radius:18px;background:#fffdf8ed;color:#11120f;font-size:12px;font-weight:750}
+.cinematic-toggle{appearance:none;border:1px solid #1113;border-radius:99px;background:#11120f;color:white;font:inherit;padding:10px 14px;min-height:44px;cursor:pointer}
+.cinematic-toggle:focus-visible{outline:3px solid #176c50;outline-offset:3px}
+.cinematic-toggle[hidden]{display:none}
+@media(max-width:800px){.cinematic-controls{left:18px;right:auto;bottom:44px;gap:8px;font-size:11px}.cinematic.two .cinematic-controls{bottom:18px}.cinematic .overlay2{transform:none}}
+@media(prefers-reduced-motion:reduce){.cinematic-video{transition:none}.cinematic-toggle{display:none}}

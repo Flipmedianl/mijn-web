@@ -1,47 +1,35 @@
-# Media performance
+# Cinematic playback
 
-The site is static and runs on GitHub Pages without a runtime build dependency.
+The site is static GitHub Pages, deployed from `main`. The earlier frame-buffer implementation is preserved in history and backup branch `backup/before-cinematic-chapters-60db61b`; the current visitor path does not use canvas or fetch/decode frame sequences.
 
-## Frame sequences
+## Two chapters
 
-The intro retains frames 1–61 and the original gradual scroll traversal (1.35 frames per 60 Hz tick on mobile, 1.8 on desktop), normalized for refresh rate. It never converts the intro into a seeking video.
+- Chapter 1: original desktop frames 1–61, above the system section.
+- Chapter 2: frames 62–122, after the unchanged avatar section.
+- Each encoded clip lasts 3.6 seconds, with a gradual slowdown over the last 12 source frames and a 0.8-second endpoint hold.
+- Native H.264 playback is started by visibility. No scroll handler sets video time or playback rate. At the end, a matching static poster and replay control communicate an intentional endpoint.
+- No looping. Scroll-back does not restart completed chapters. Replay is explicit.
+- Mobile intro remains 155svh. Desktop intro is reduced from 380svh to 155svh; the later chapter is 145svh on both profiles. There is no scroll lock or forced waiting.
 
-Each `[data-sequence]` declares `data-frame-from` and `data-frame-to`; optional `data-frames` and `data-frames-mobile` select asset directories. Use contiguous `frame-001.webp` numbering. Only sequences within half a viewport are buffered. One shared request pool allows at most 3 mobile / 4 desktop loads (2 on constrained connections), discards obsolete work, prioritizes current/target frames, and buffers a bounded neighborhood. Decoded bitmap budgets are 32 MiB mobile and 64 MiB desktop per nearby sequence. Eviction must discard frames outside the currently requested buffer before using distance: otherwise directional lookahead can be decoded and immediately evicted indefinitely when scrolling stops. Bitmaps are closed outside the loading zone and when the tab is hidden. Avoid overlapping many sequences in one viewport.
+`scripts/build-cinematic.sh` rebuilds only the six chapter assets from the original frames, using FFmpeg/libx264, CRF 24, normal inter-frame compression, yuv420p and faststart. Desktop video keeps 1280×720. Mobile crops the original center to 540×720, matching the earlier mobile intro composition and improving the effective resolution of the later chapter over the old 540×304 landscape crop. Source assets are retained. Do not run legacy avatar-simplification workflows as part of cinematic changes.
 
-Canvas dimensions follow its actual stable `svh` box. Mobile address bar changes no longer wipe the canvas. The first frame is a responsive HTML image as well as a matching preload, keeping the intro visible before JavaScript or decoding completes. No animation frame loop runs while idle.
+## Resource lifecycle and accessibility
 
-## Avatar
+`assets/js/cinematic.js` owns media state. The native media decoder owns playback; there is no cinematic animation-frame loop or bitmap cache. Sources attach near the chapter. Playback requires at least 20% of its sticky viewport to be visible. Playback pauses offscreen; distant or background-tab sources are removed. A returning unfinished chapter may perform one restoration seek. Completed chapters release their source after the endpoint poster decodes. Pause/resume and replay remain keyboard accessible.
 
-Source: `assets/avatar-mobile.glb` (632,002 triangles, 2,738,884 bytes).
+Muted, inline, audio-free media permits autoplay where browser policy allows it. A rejected `play()` promise exposes an explicit play button; network failure displays a deliberate poster and message. `prefers-reduced-motion` prevents video loading and playback and shows a clean static poster. Changing that preference at runtime is supported. Reduced motion does not silently bypass the user's setting on a button click.
 
-- Mobile and desktop currently both use `avatar-desktop.glb` (restored by commit `d1506f0`).
-- `avatar-low.glb` (57,834 triangles, 512,904 bytes, 512px textures) is a legacy asset and is NOT used.
-- Desktop: `avatar-desktop.glb`, 126,396 triangles, 1,035,428 bytes, textures capped at 1024px.
-
-The derived models keep textures and material; simplification is lossy, with bounded geometric error. This audit does not change model geometry, textures, or render resolution. `scripts/build-media.sh` reproduces the outputs using pinned glTF Transform 4.5.0 and FFmpeg. The source is preserved. Do not rerun legacy workflows that rewrite `index.html` using assumptions from the old inline-script version.
-
-WebGL detection, viewer import, Draco decoding and model loading happen only near the avatar. Shadows are disabled on mobile. Camera updates are quantized and scroll-driven, with no continuous auto-rotation. Offscreen/hidden models are released with the viewer cache disabled. A readable message and service cards remain when WebGL or model loading fails. The model-viewer dependency remains pinned to 4.1.0.
-
-## Video
-
-Use `.lazy-video` with `data-src`, optional `data-src-mobile`, `preload="none"`, `muted` and `playsinline` in a `.scrub > .sticky` section. No `src` should exist in initial HTML. The current video has all-intra keyframes for seeking. FFmpeg generates a 540px mobile variant; avoid adding ordinary long-GOP video to a scroll-scrubbing section. Playback videos should use a separate play/pause controller.
-
-Videos attach sources near their section and detach them outside it. Only one seek is in flight. `seeked` drains the latest target, including when the user stops scrolling during a seek. No timeout creates overlapping seeks. Poster frames load with the video. Large future videos should be split into separate sections/clips rather than retained together.
-
-The mobile intro is 155svh (55svh scrub travel), with the system section overlapping by 9vh; desktop remains 380svh.
+The avatar controller, sharp desktop/mobile GLB selection, Draco compression, 1024px textures, lazy import, mobile shadows off and offscreen/hidden disposal are unchanged. CSS/RAF scroll work remaining in site.js is for the avatar only, plus existing reveal observers.
 
 ## Verification
 
-- Run `node tests/frame-cache.cjs` for stationary forward/reverse buffer retention at the real mobile frame dimensions.
-- Use **Buffer-rusttest** on the live test page to confirm no new frame requests after stopping at frame 30.
-- Run `node tests/video.cjs` for mobile source selection, serialized seeking, final-target drain and offscreen release.
-- Run `node tests/scheduler.cjs` for concurrency, cancellation, 10,000-frame scaling, stepping and bitmap budget assertions.
-- Open `tests/performance.html` on the deployed origin. It loads the actual website in 390×844 / 1280×800 frames and measures forward/reverse scrolling, frames displayed, resource requests, long tasks, final video seek and release. It does not simulate physical phone CPU/GPU performance.
-- The opt-in `?audit=1` diagnostics expose counters only; nothing is uploaded.
-- Also inspect the avatar on a real WebGL-capable phone and desktop. A cloud browser without WebGL can verify fallback behavior but cannot verify 3D rendering smoothness.
+- `node tests/cinematic.cjs`: native play, absence of per-scroll seeks, user pause/resume, release/restoration, endpoint/replay, reduced motion, autoplay rejection and media errors.
+- `node tests/video.cjs`: compatibility entry point for the same current video-controller regression tests.
+- `tests/performance.html`: real deployed page in mobile/desktop viewports; verifies movement while scroll stays still, both chapter endpoints, pause/resume, no frame-decoder fetches, no early second video, no scroll seeks, resource release and unchanged avatar selection.
+- `tests/media-manifest.json`: source frame ranges, sizes, codec, resolution and duration of produced assets.
 
-## Live verification result
+The historical `scheduler.cjs` and `frame-cache.cjs` tests have been retired with the frame renderer. Their original implementation and test results remain in git history. The September 17 performance audit describes the prior runtime, not the current native playback model.
 
-The deployed runtime at commit `86f9e0d` passed all seven checks on both 390×844 and 1280×800 viewports: no early heavy-media requests, frame 61 at the end, frame 1 on return, bounded bitmap memory, release outside sections, final video seek, and no JavaScript errors. See `tests/live-results.json`. The first live test exposed excessive catch-up time when animation callbacks were throttled; ticks over 120ms now synchronize immediately to the scroll target. Both glTF outputs validated without errors (the validator notes runtime-generated tangent space and cannot validate the Draco extension itself).
+The cloud browser can verify state, media time and requests, but not physical iPhone smoothness, iOS Safari GPU behavior, or WebGL visual fidelity. Never present those as verified by desktop emulation.
 
-The cloud browser throttled animation callbacks to roughly 1 Hz and had no WebGL. This result verifies functional behavior and loading, not 60fps animation, visual fidelity of the simplified avatar, or physical-phone GPU smoothness. Those remain device checks.
+References: [WebKit muted inline video policy](https://webkit.org/blog/6784/new-video-policies-for-ios/), [play() promise and rejection handling](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/play).
