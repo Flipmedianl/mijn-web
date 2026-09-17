@@ -1,0 +1,40 @@
+name: Fix avatar display
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/fix-avatar-display.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fix model viewer framing and fallback
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('index.html')
+          s=p.read_text()
+          old='src="assets/avatar-mobile.glb" loading="eager" reveal="auto" camera-controls disable-zoom interaction-prompt="none" shadow-intensity="1.2" exposure="1" environment-image="neutral" camera-orbit="0deg 78deg 3.2m" field-of-view="28deg"'
+          new='src="assets/avatar-mobile.glb?v=3" loading="eager" reveal="auto" camera-controls auto-rotate rotation-per-second="8deg" disable-zoom interaction-prompt="none" shadow-intensity="1.2" exposure="1.15" environment-image="neutral" camera-orbit="0deg 75deg auto" camera-target="auto auto auto" field-of-view="32deg"'
+          if old not in s:
+              raise SystemExit('Expected model-viewer markup not found')
+          s=s.replace(old,new,1)
+          s=s.replace("const avatar=document.querySelector('.avatar-sec'),model=document.querySelector('#model'),floaters=[...avatar.querySelectorAll('.float-card')];", "const avatar=document.querySelector('.avatar-sec'),model=document.querySelector('#model'),floaters=[...avatar.querySelectorAll('.float-card')];if(model){model.addEventListener('error',()=>{if(!model.dataset.fallback){model.dataset.fallback='1';model.src='assets/avatar-optimized.glb?v=3'}});model.addEventListener('load',()=>model.dismissPoster&&model.dismissPoster());}",1)
+          s=s.replace("if(model)model.cameraOrbit=`${-38+p*76}deg ${80-p*5}deg ${3.4-p*.45}m`;", "if(model)model.cameraOrbit=`${-38+p*76}deg ${80-p*5}deg auto`;",1)
+          p.write_text(s)
+          PY
+      - name: Commit fix
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Fix avatar visibility and framing"
+          git push
