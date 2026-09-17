@@ -1,0 +1,37 @@
+name: Optimize frames for speed
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/optimize-frames-speed.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  optimize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install WebP tools
+        run: sudo apt-get update -qq && sudo apt-get install -y webp
+      - name: Recompress animation frames
+        run: |
+          mkdir -p /tmp/frames
+          for f in frames/frame-*.webp; do
+            name=$(basename "$f")
+            cwebp -quiet -mt -q 72 -m 4 "$f" -o "/tmp/frames/$name"
+          done
+          cp /tmp/frames/*.webp frames/
+          echo "Optimized frame total:"
+          du -sh frames
+      - name: Commit optimized frames
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add frames
+          git diff --cached --quiet && exit 0
+          git commit -m "Compress animation frames for faster loading"
+          git push
