@@ -1,0 +1,1375 @@
+{
+  "implementation": "c135d9e9d086f815ba300dc8744d166adf1b13c9",
+  "testCommit": "d156331759c9afe4e2c10fb845f9d55f69ef08c3",
+  "mobile": {
+    "initial": {
+      "y": 0,
+      "viewport": [
+        390,
+        844
+      ],
+      "intro": {
+        "state": "forward",
+        "frame": 1,
+        "current": 1,
+        "target": 1,
+        "active": true,
+        "retained": null,
+        "turn": 388.234375,
+        "end": 1232.234375,
+        "decoded": 9,
+        "running": 0,
+        "bytes": 13996800,
+        "draws": 1,
+        "errors": []
+      },
+      "systemTop": 1232.234375,
+      "controls": 0,
+      "errors": [],
+      "networkErrors": [],
+      "resourceCount": 14
+    },
+    "forward": {
+      "y": 194,
+      "viewport": [
+        390,
+        844
+      ],
+      "intro": {
+        "state": "forward",
+        "frame": 31,
+        "current": 30.981889161669418,
+        "target": 30.981889161669418,
+        "active": true,
+        "retained": null,
+        "turn": 388.234375,
+        "end": 1232.234375,
+        "decoded": 12,
+        "running": 0,
+        "bytes": 18662400,
+        "draws": 3,
+        "errors": []
+      },
+      "systemTop": 1038.234375,
+      "controls": 0,
+      "errors": [],
+      "networkErrors": [],
+      "resourceCount": 32
+    },
+    "turn": {
+      "y": 388,
+      "viewport": [
+        390,
+        844
+      ],
+      "intro": {
+        "state": "forward",
+        "frame": 61,
+        "current": 60.963778323338836,
+        "target": 60.963778323338836,
+        "active": true,
+        "retained": null,
+        "turn": 388.234375,
+        "end": 1232.234375,
+        "decoded": 8,
+        "running": 0,
+        "bytes": 12441600,
+        "draws": 4,
+        "errors": []
+      },
+      "systemTop": 844.234375,
+      "controls": 0,
+      "errors": [],
+      "networkErrors": [],
+      "resourceCount": 41
+    },
+    "down1": {
+      "y": 599,
+      "viewport": [
+        390,
+        844
+      ],
+      "intro": {
+        "state": "overlap",
+        "frame": 54,
+        "current": 53.50833086492891,
+        "target": 53.50833086492891,
+        "active": true,
+        "retained": null,
+        "turn": 388.234375,
+        "end": 1232.234375,
+        "decoded": 12,
+        "running": 0,
+        "bytes": 18662400,
+        "draws": 6,
+        "errors": []
+      },
+      "systemTop": 633.234375,
+      "controls": 0,
+      "errors": [],
+      "networkErrors": [],
+      "resourceCount": 47
+    },
+    "down2": {
+      "y": 937,
+      "viewport": [
+        390,
+        844
+      ],
+      "intro": {
+        "state": "overlap",
+        "frame": 41,
+        "current": 41.49411285545024,
+        "target": 41.49411285545024,
+        "active": true,
+        "retained": null,
+        "turn": 388.234375,
+        "end": 1232.234375,
+        "decoded": 12,
+        "running": 0,
+        "bytes": 18662400,
+        "draws": 8,
+        "errors": []
+      },
+      "systemTop": 295.234375,
+      "controls": 0,
+      "errors": [],
+      "networkErrors": [],
+      "resourceCount": 59
+    },
+    "up1": {
+      "y": 726,
+      "viewport": [
+        390,
+        844
+      ],
+      "intro": {
+        "state": "overlap",
+        "frame": 49,
+        "current": 48.99411285545024,
+        "target": 48.99411285545024,
+        "active": true,
+        "retained": null,
+        "turn": 388.234375,
+        "end": 1232.234375,
+        "decoded": 12,
+        "running": 0,
+        "bytes": 18662400,
+        "draws": 10,
+        "errors": []
+      },
+      "systemTop": 506.234375,
+      "controls": 0,
+      "errors": [],
+      "networkErrors": [],
+      "resourceCount": 67
+    },
+    "down3": {
+      "y": 1021,
+      "viewport": [
+        390,
+        844
+      ],
+      "intro": {
+        "state": "overlap",
+        "frame": 39,
+        "current": 38.50833086492891,
+        "target": 38.50833086492891,
+        "active": true,
+        "retained": null,
+        "turn": 388.234375,
+        "end": 1232.234375,
+        "decoded": 12,
+        "running": 0,
+        "bytes": 18662400,
+        "draws": 12,
+        "errors": []
+      },
+      "systemTop": 211.234375,
+      "controls": 0,
+      "errors": [],
+      "networkErrors": [],
+      "resourceCount": 78
+    },
+    "edge": {
+      "y": 1230,
+      "viewport": [
+        390,
+        844
+      ],
+      "intro": {
+        "state": "overlap",
+        "frame": 31,
+        "current": 31.079420912322274,
+        "target": 31.079420912322274,
+        "active": true,
+        "retained": null,
+        "turn": 388.234375,
+        "end": 1232.234375,
+        "decoded": 12,
+        "running": 0,
+        "bytes": 18662400,
+        "draws": 13,
+        "errors": []
+      },
+      "systemTop": 2.234375,
+      "controls": 0,
+      "errors": [],
+      "networkErrors": [],
+      "resourceCount": 84
+    },
+    "hidden": {
+      "y": 1292,
+      "viewport": [
+        390,
+        844
+      ],
+      "intro": {
+        "state": "offscreen",
+        "frame": 31,
+        "current": 31,
+        "target": 31.079420912322274,
+        "active": false,
+        "retained": 31,
+        "turn": 388.234375,
+        "end": 1232.234375,
+        "decoded": 1,
+        "running": 0,
+        "bytes": 1555200,
+        "draws": 13,
+        "errors": []
+      },
+      "systemTop": -59.765625,
+      "controls": 0,
+      "errors": [],
+      "networkErrors": [],
+      "resourceCount": 84
+    },
+    "hiddenIdle": {
+      "y": 1292,
+      "viewport": [
+        390,
+        844
+      ],
+      "intro": {
+        "state": "offscreen",
+        "frame": 31,
+        "current": 31,
+        "target": 31.079420912322274,
+        "active": false,
+        "retained": 31,
+        "turn": 388.234375,
+        "end": 1232.234375,
+        "decoded": 1,
+        "running": 0,
+        "bytes": 1555200,
+        "draws": 13,
+        "errors": []
+      },
+      "systemTop": -59.765625,
+      "controls": 0,
+      "errors": [],
+      "networkErrors": [],
+      "resourceCount": 84
+    },
+    "returned": {
+      "y": 1230,
+      "viewport": [
+        390,
+        844
+      ],
+      "intro": {
+        "state": "overlap",
+        "frame": 31,
+        "current": 31.079420912322274,
+        "target": 31.079420912322274,
+        "active": true,
+        "retained": 31,
+        "turn": 388.234375,
+        "end": 1232.234375,
+        "decoded": 12,
+        "running": 0,
+        "bytes": 18662400,
+        "draws": 13,
+        "errors": []
+      },
+      "systemTop": 2.234375,
+      "controls": 0,
+      "errors": [],
+      "networkErrors": [],
+      "resourceCount": 95
+    },
+    "up2": {
+      "y": 810,
+      "viewport": [
+        390,
+        844
+      ],
+      "intro": {
+        "state": "overlap",
+        "frame": 46,
+        "current": 46.00833086492891,
+        "target": 46.00833086492891,
+        "active": true,
+        "retained": 31,
+        "turn": 388.234375,
+        "end": 1232.234375,
+        "decoded": 12,
+        "running": 0,
+        "bytes": 18662400,
+        "draws": 15,
+        "errors": []
+      },
+      "systemTop": 422.234375,
+      "controls": 0,
+      "errors": [],
+      "networkErrors": [],
+      "resourceCount": 106
+    },
+    "rapid": {
+      "y": 726,
+      "viewport": [
+        390,
+        844
+      ],
+      "intro": {
+        "state": "overlap",
+        "frame": 49,
+        "current": 48.99411285545024,
+        "target": 48.99411285545024,
+        "active": true,
+        "retained": 31,
+        "turn": 388.234375,
+        "end": 1232.234375,
+        "decoded": 12,
+        "running": 0,
+        "bytes": 18662400,
+        "draws": 16,
+        "errors": []
+      },
+      "systemTop": 506.234375,
+      "controls": 0,
+      "errors": [],
+      "networkErrors": [],
+      "resourceCount": 113
+    },
+    "idle": {
+      "y": 726,
+      "viewport": [
+        390,
+        844
+      ],
+      "intro": {
+        "state": "overlap",
+        "frame": 49,
+        "current": 48.99411285545024,
+        "target": 48.99411285545024,
+        "active": true,
+        "retained": 31,
+        "turn": 388.234375,
+        "end": 1232.234375,
+        "decoded": 12,
+        "running": 0,
+        "bytes": 18662400,
+        "draws": 16,
+        "errors": []
+      },
+      "systemTop": 506.234375,
+      "controls": 0,
+      "errors": [],
+      "networkErrors": [],
+      "resourceCount": 113
+    },
+    "idleLater": {
+      "y": 726,
+      "viewport": [
+        390,
+        844
+      ],
+      "intro": {
+        "state": "overlap",
+        "frame": 49,
+        "current": 48.99411285545024,
+        "target": 48.99411285545024,
+        "active": true,
+        "retained": 31,
+        "turn": 388.234375,
+        "end": 1232.234375,
+        "decoded": 12,
+        "running": 0,
+        "bytes": 18662400,
+        "draws": 16,
+        "errors": []
+      },
+      "systemTop": 506.234375,
+      "controls": 0,
+      "errors": [],
+      "networkErrors": [],
+      "resourceCount": 113
+    },
+    "checks": {
+      "noIntroPlayer": true,
+      "forward": true,
+      "turnAtContentEdge": true,
+      "downReverses": true,
+      "upReverses": true,
+      "downAgain": true,
+      "hiddenRetains": true,
+      "hiddenStops": true,
+      "returnNoReset": true,
+      "rapidReversal": true,
+      "idleSleeps": true,
+      "boundedBuffer": true,
+      "noErrors": true,
+      "noBadResponses": true,
+      "noIntroMovie": true,
+      "shortIntro": true,
+      "avatarPreserved": true
+    },
+    "resources": [
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-001.webp",
+        "bytes": 20114,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/assets/css/site.css?v=10",
+        "bytes": 3219,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/assets/js/site.js?v=11",
+        "bytes": 1326,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/assets/js/intro-transition.js?v=1",
+        "bytes": 2774,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/assets/js/cinematic.js?v=1",
+        "bytes": 2156,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-061.webp",
+        "bytes": 33408,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-031.webp",
+        "bytes": 24830,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-002.webp",
+        "bytes": 19832,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-003.webp",
+        "bytes": 20288,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-004.webp",
+        "bytes": 19982,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-005.webp",
+        "bytes": 20452,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-006.webp",
+        "bytes": 19796,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-007.webp",
+        "bytes": 19908,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-008.webp",
+        "bytes": 19946,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-009.webp",
+        "bytes": 20342,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-010.webp",
+        "bytes": 19998,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-011.webp",
+        "bytes": 20458,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-012.webp",
+        "bytes": 20576,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-013.webp",
+        "bytes": 21402,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-014.webp",
+        "bytes": 21016,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-015.webp",
+        "bytes": 21370,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-032.webp",
+        "bytes": 24868,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-030.webp",
+        "bytes": 24404,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-033.webp",
+        "bytes": 26030,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-029.webp",
+        "bytes": 25244,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-034.webp",
+        "bytes": 25076,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-028.webp",
+        "bytes": 24654,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-035.webp",
+        "bytes": 25636,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-027.webp",
+        "bytes": 24674,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-036.webp",
+        "bytes": 25672,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-026.webp",
+        "bytes": 24226,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-037.webp",
+        "bytes": 27490,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-038.webp",
+        "bytes": 27100,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-039.webp",
+        "bytes": 27676,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-060.webp",
+        "bytes": 31940,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-059.webp",
+        "bytes": 32214,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-058.webp",
+        "bytes": 31460,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-057.webp",
+        "bytes": 32528,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-056.webp",
+        "bytes": 31666,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-055.webp",
+        "bytes": 31760,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-054.webp",
+        "bytes": 30958,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-053.webp",
+        "bytes": 32620,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-052.webp",
+        "bytes": 30756,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-051.webp",
+        "bytes": 30928,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-050.webp",
+        "bytes": 30374,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-049.webp",
+        "bytes": 31008,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-047.webp",
+        "bytes": 29690,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-041.webp",
+        "bytes": 29074,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-046.webp",
+        "bytes": 29060,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-048.webp",
+        "bytes": 29654,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-045.webp",
+        "bytes": 29916,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-044.webp",
+        "bytes": 29102,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-043.webp",
+        "bytes": 29090,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-040.webp",
+        "bytes": 27824,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames-mobile/frame-042.webp",
+        "bytes": 27904,
+        "status": 200
+      }
+    ]
+  },
+  "desktop": {
+    "initial": {
+      "y": 0,
+      "viewport": [
+        1280,
+        800
+      ],
+      "intro": {
+        "state": "forward",
+        "frame": 1,
+        "current": 1,
+        "target": 1,
+        "active": true,
+        "retained": null,
+        "turn": 440,
+        "end": 1240,
+        "decoded": 6,
+        "running": 2,
+        "bytes": 22118400,
+        "draws": 1,
+        "errors": []
+      },
+      "systemTop": 1240,
+      "controls": 0,
+      "errors": [],
+      "networkErrors": [],
+      "resourceCount": 13
+    },
+    "forward": {
+      "y": 220,
+      "viewport": [
+        1280,
+        800
+      ],
+      "intro": {
+        "state": "forward",
+        "frame": 31,
+        "current": 31,
+        "target": 31,
+        "active": true,
+        "retained": null,
+        "turn": 440,
+        "end": 1240,
+        "decoded": 8,
+        "running": 0,
+        "bytes": 29491200,
+        "draws": 3,
+        "errors": []
+      },
+      "systemTop": 1020,
+      "controls": 0,
+      "errors": [],
+      "networkErrors": [],
+      "resourceCount": 22
+    },
+    "turn": {
+      "y": 440,
+      "viewport": [
+        1280,
+        800
+      ],
+      "intro": {
+        "state": "overlap",
+        "frame": 61,
+        "current": 61,
+        "target": 61,
+        "active": true,
+        "retained": null,
+        "turn": 440,
+        "end": 1240,
+        "decoded": 8,
+        "running": 0,
+        "bytes": 29491200,
+        "draws": 4,
+        "errors": []
+      },
+      "systemTop": 800,
+      "controls": 0,
+      "errors": [],
+      "networkErrors": [],
+      "resourceCount": 32
+    },
+    "down1": {
+      "y": 640,
+      "viewport": [
+        1280,
+        800
+      ],
+      "intro": {
+        "state": "overlap",
+        "frame": 54,
+        "current": 53.5,
+        "target": 53.5,
+        "active": true,
+        "retained": null,
+        "turn": 440,
+        "end": 1240,
+        "decoded": 8,
+        "running": 0,
+        "bytes": 29491200,
+        "draws": 7,
+        "errors": []
+      },
+      "systemTop": 600,
+      "controls": 0,
+      "errors": [],
+      "networkErrors": [],
+      "resourceCount": 37
+    },
+    "down2": {
+      "y": 960,
+      "viewport": [
+        1280,
+        800
+      ],
+      "intro": {
+        "state": "overlap",
+        "frame": 42,
+        "current": 41.5,
+        "target": 41.5,
+        "active": true,
+        "retained": null,
+        "turn": 440,
+        "end": 1240,
+        "decoded": 8,
+        "running": 0,
+        "bytes": 29491200,
+        "draws": 9,
+        "errors": []
+      },
+      "systemTop": 280,
+      "controls": 0,
+      "errors": [],
+      "networkErrors": [],
+      "resourceCount": 48
+    },
+    "up1": {
+      "y": 760,
+      "viewport": [
+        1280,
+        800
+      ],
+      "intro": {
+        "state": "overlap",
+        "frame": 49,
+        "current": 49,
+        "target": 49,
+        "active": true,
+        "retained": null,
+        "turn": 440,
+        "end": 1240,
+        "decoded": 8,
+        "running": 0,
+        "bytes": 29491200,
+        "draws": 10,
+        "errors": []
+      },
+      "systemTop": 480,
+      "controls": 0,
+      "errors": [],
+      "networkErrors": [],
+      "resourceCount": 57
+    },
+    "down3": {
+      "y": 1040,
+      "viewport": [
+        1280,
+        800
+      ],
+      "intro": {
+        "state": "overlap",
+        "frame": 39,
+        "current": 38.5,
+        "target": 38.5,
+        "active": true,
+        "retained": null,
+        "turn": 440,
+        "end": 1240,
+        "decoded": 8,
+        "running": 0,
+        "bytes": 29491200,
+        "draws": 11,
+        "errors": []
+      },
+      "systemTop": 200,
+      "controls": 0,
+      "errors": [],
+      "networkErrors": [],
+      "resourceCount": 67
+    },
+    "edge": {
+      "y": 1238,
+      "viewport": [
+        1280,
+        800
+      ],
+      "intro": {
+        "state": "overlap",
+        "frame": 31,
+        "current": 31.075,
+        "target": 31.075,
+        "active": true,
+        "retained": null,
+        "turn": 440,
+        "end": 1240,
+        "decoded": 8,
+        "running": 0,
+        "bytes": 29491200,
+        "draws": 12,
+        "errors": []
+      },
+      "systemTop": 2,
+      "controls": 0,
+      "errors": [],
+      "networkErrors": [],
+      "resourceCount": 74
+    },
+    "hidden": {
+      "y": 1300,
+      "viewport": [
+        1280,
+        800
+      ],
+      "intro": {
+        "state": "offscreen",
+        "frame": 31,
+        "current": 31,
+        "target": 31.075,
+        "active": false,
+        "retained": 31,
+        "turn": 440,
+        "end": 1240,
+        "decoded": 1,
+        "running": 0,
+        "bytes": 3686400,
+        "draws": 12,
+        "errors": []
+      },
+      "systemTop": -60,
+      "controls": 0,
+      "errors": [],
+      "networkErrors": [],
+      "resourceCount": 74
+    },
+    "hiddenIdle": {
+      "y": 1300,
+      "viewport": [
+        1280,
+        800
+      ],
+      "intro": {
+        "state": "offscreen",
+        "frame": 31,
+        "current": 31,
+        "target": 31.075,
+        "active": false,
+        "retained": 31,
+        "turn": 440,
+        "end": 1240,
+        "decoded": 1,
+        "running": 0,
+        "bytes": 3686400,
+        "draws": 12,
+        "errors": []
+      },
+      "systemTop": -60,
+      "controls": 0,
+      "errors": [],
+      "networkErrors": [],
+      "resourceCount": 75
+    },
+    "returned": {
+      "y": 1238,
+      "viewport": [
+        1280,
+        800
+      ],
+      "intro": {
+        "state": "overlap",
+        "frame": 31,
+        "current": 31.075,
+        "target": 31.075,
+        "active": true,
+        "retained": 31,
+        "turn": 440,
+        "end": 1240,
+        "decoded": 8,
+        "running": 0,
+        "bytes": 29491200,
+        "draws": 12,
+        "errors": []
+      },
+      "systemTop": 2,
+      "controls": 0,
+      "errors": [],
+      "networkErrors": [],
+      "resourceCount": 82
+    },
+    "up2": {
+      "y": 840,
+      "viewport": [
+        1280,
+        800
+      ],
+      "intro": {
+        "state": "overlap",
+        "frame": 46,
+        "current": 46,
+        "target": 46,
+        "active": true,
+        "retained": 31,
+        "turn": 440,
+        "end": 1240,
+        "decoded": 8,
+        "running": 0,
+        "bytes": 29491200,
+        "draws": 14,
+        "errors": []
+      },
+      "systemTop": 400,
+      "controls": 0,
+      "errors": [],
+      "networkErrors": [],
+      "resourceCount": 95
+    },
+    "rapid": {
+      "y": 760,
+      "viewport": [
+        1280,
+        800
+      ],
+      "intro": {
+        "state": "overlap",
+        "frame": 49,
+        "current": 49,
+        "target": 49,
+        "active": true,
+        "retained": 31,
+        "turn": 440,
+        "end": 1240,
+        "decoded": 8,
+        "running": 0,
+        "bytes": 29491200,
+        "draws": 18,
+        "errors": []
+      },
+      "systemTop": 480,
+      "controls": 0,
+      "errors": [],
+      "networkErrors": [],
+      "resourceCount": 111
+    },
+    "idle": {
+      "y": 760,
+      "viewport": [
+        1280,
+        800
+      ],
+      "intro": {
+        "state": "overlap",
+        "frame": 49,
+        "current": 49,
+        "target": 49,
+        "active": true,
+        "retained": 31,
+        "turn": 440,
+        "end": 1240,
+        "decoded": 8,
+        "running": 0,
+        "bytes": 29491200,
+        "draws": 18,
+        "errors": []
+      },
+      "systemTop": 480,
+      "controls": 0,
+      "errors": [],
+      "networkErrors": [],
+      "resourceCount": 111
+    },
+    "idleLater": {
+      "y": 760,
+      "viewport": [
+        1280,
+        800
+      ],
+      "intro": {
+        "state": "overlap",
+        "frame": 49,
+        "current": 49,
+        "target": 49,
+        "active": true,
+        "retained": 31,
+        "turn": 440,
+        "end": 1240,
+        "decoded": 8,
+        "running": 0,
+        "bytes": 29491200,
+        "draws": 18,
+        "errors": []
+      },
+      "systemTop": 480,
+      "controls": 0,
+      "errors": [],
+      "networkErrors": [],
+      "resourceCount": 111
+    },
+    "checks": {
+      "noIntroPlayer": true,
+      "forward": true,
+      "turnAtContentEdge": true,
+      "downReverses": true,
+      "upReverses": true,
+      "downAgain": true,
+      "hiddenRetains": true,
+      "hiddenStops": true,
+      "returnNoReset": true,
+      "rapidReversal": true,
+      "idleSleeps": true,
+      "boundedBuffer": true,
+      "noErrors": true,
+      "noBadResponses": true,
+      "noIntroMovie": true,
+      "shortIntro": true,
+      "avatarPreserved": true
+    },
+    "resources": [
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames/frame-001.webp",
+        "bytes": 60378,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/assets/css/site.css?v=10",
+        "bytes": 3219,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/assets/js/site.js?v=11",
+        "bytes": 1326,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/assets/js/cinematic.js?v=1",
+        "bytes": 2156,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/assets/js/intro-transition.js?v=1",
+        "bytes": 2774,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames/frame-061.webp",
+        "bytes": 79220,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames/frame-031.webp",
+        "bytes": 63554,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames/frame-002.webp",
+        "bytes": 59418,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames/frame-003.webp",
+        "bytes": 60988,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames/frame-004.webp",
+        "bytes": 59856,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames/frame-005.webp",
+        "bytes": 61912,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames/frame-006.webp",
+        "bytes": 60416,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames/frame-007.webp",
+        "bytes": 59446,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames/frame-008.webp",
+        "bytes": 60722,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames/frame-009.webp",
+        "bytes": 61486,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames/frame-032.webp",
+        "bytes": 63770,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames/frame-030.webp",
+        "bytes": 62090,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames/frame-033.webp",
+        "bytes": 65180,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames/frame-029.webp",
+        "bytes": 64728,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames/frame-034.webp",
+        "bytes": 64008,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames/frame-028.webp",
+        "bytes": 63568,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames/frame-037.webp",
+        "bytes": 67294,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames/frame-038.webp",
+        "bytes": 65032,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames/frame-036.webp",
+        "bytes": 64800,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames/frame-039.webp",
+        "bytes": 66514,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames/frame-060.webp",
+        "bytes": 75398,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames/frame-059.webp",
+        "bytes": 77014,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames/frame-058.webp",
+        "bytes": 75764,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames/frame-057.webp",
+        "bytes": 78222,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames/frame-056.webp",
+        "bytes": 74840,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames/frame-055.webp",
+        "bytes": 75334,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames/frame-054.webp",
+        "bytes": 74636,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames/frame-053.webp",
+        "bytes": 76696,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames/frame-052.webp",
+        "bytes": 74068,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames/frame-051.webp",
+        "bytes": 74068,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames/frame-050.webp",
+        "bytes": 73848,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames/frame-042.webp",
+        "bytes": 67830,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames/frame-049.webp",
+        "bytes": 75202,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames/frame-048.webp",
+        "bytes": 72854,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames/frame-047.webp",
+        "bytes": 72512,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames/frame-046.webp",
+        "bytes": 70560,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames/frame-041.webp",
+        "bytes": 69480,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames/frame-043.webp",
+        "bytes": 69452,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames/frame-040.webp",
+        "bytes": 67144,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames/frame-044.webp",
+        "bytes": 70672,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames/frame-045.webp",
+        "bytes": 71366,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/frames/frame-035.webp",
+        "bytes": 65022,
+        "status": 200
+      },
+      {
+        "url": "https://flipmedianl.github.io/mijn-web/assets/js/avatar.js?v=8",
+        "bytes": 850,
+        "status": 200
+      }
+    ]
+  }
+}

@@ -10,6 +10,14 @@ The section-1/section-2 transition now uses `assets/js/intro-transition.js` and 
 - New tests: `node tests/intro-transition.cjs` and deployed `tests/transition.html`. Earlier `tests/performance.html` and cinematic production measurements describe the previous two-video release, not this transition.
 - Avatar code/model and later chapter video/controller are unchanged. The mobile full intro sequence is 1,566,736 bytes versus the replaced 616,187-byte movie: reversibility costs additional media bytes; no unmeasured load-speed improvement is claimed.
 
+## Production validation
+
+Implementation c135d9e; test synchronization d156331. All 17 checks pass on the real GitHub Pages deployment in 390×844 and 1280×800 browser windows. Observed: frame 1 → 31 → 61, down through overlap → 54 → 41/42, up → 49, down → 39, exit/return → 31 unchanged, up again → 46. Rapid alternating targets settle on the latest target. No hidden or settled-idle redraws, no intro movie, no controls, no website JavaScript/resource errors or HTTP error responses. Raw snapshots are in tests/transition-production-results.json.
+
+Retained decoded images: at most 12 mobile (~17.8 MiB) / 8 desktop (~28.1 MiB), plus a maximum of two transient decodes and the canvas. Fully covered: one retained image, no active decode. These are controlled allocations, not measurements of total browser/GPU memory.
+
+Production HTML and changed runtime scripts were fetched with HTTP 200 and matched local hashes. The test initially sampled stale state in the throttled cloud browser; it now waits for the processed target and fully settled renderer. The cloud environment sometimes schedules animation callbacks at roughly 1 Hz. These tests verify direction/state/resource lifecycle, not frame pacing on physical iOS Safari. No new PageSpeed score is claimed for this transition.
+
 ---
 
 # Cinematic playback

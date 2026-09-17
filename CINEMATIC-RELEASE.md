@@ -1,3 +1,5 @@
+> Historisch rapport van de twee-video-release. De intro is daarna vervangen door de omkeerbare sectie-overgang; zie PERFORMANCE.md en tests/transition-production-results.json.
+
 # Cinematic release — 17 september 2026
 
 Productie: https://flipmedianl.github.io/mijn-web/
