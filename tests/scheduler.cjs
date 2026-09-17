@@ -27,6 +27,7 @@ const flush=async()=>{for(let i=0;i<30;i++){const batch=pending;pending=[];batch
  await flush();assert.ok(maxRunning<=3,'global mobile concurrency capped');
  assert.ok(vm.runInContext('s.cache.size',context)<=18,'10,000 frames do not preload in full');
  const current=vm.runInContext('s.current',context);assert.ok(current>1&&current<3,'original frame progression restored');
+ vm.runInContext('s.update(250)',context);assert.equal(vm.runInContext('s.current',context),vm.runInContext('s.target',context),'catch up after throttled animation ticks');
  vm.runInContext('s.current=5000; s.update(16.67); pool.reconcile(s,[]);',context);
  await flush();assert.equal(running,0,'stale requests canceled');
  vm.runInContext('for(let i=1;i<80;i++)s.cache.set(i,{width:540,height:720,close(){}});s.trim();',context);

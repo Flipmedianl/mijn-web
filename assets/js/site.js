@@ -120,7 +120,7 @@ class FrameSequence {
     this.target = target;
     // Restore the original gradual frame traversal, normalized for refresh rate.
     const delta = target-this.current, step = (this.mobile ? 1.35 : 1.8)*dt/(1000/60);
-    this.current += Math.sign(delta)*Math.min(Math.abs(delta), step);
+    this.current = dt > 120 ? target : this.current + Math.sign(delta)*Math.min(Math.abs(delta), step);
     const frame = Math.round(this.current), end = Math.round(target);
     const frames = [frame, end];
     if (!reducedMotion.matches) {
@@ -183,7 +183,7 @@ let avatarNear=false, avatarActive=false, avatarModule, avatarController, avatar
 function loadAvatar() {
   if (!avatarNear || document.hidden || avatarController || avatarModule) return;
   const generation = ++avatarGeneration;
-  avatarModule = import('./avatar.js?v=7').then(async ({mountAvatar}) => {
+  avatarModule = import('./avatar.js?v=8').then(async ({mountAvatar}) => {
     if (!avatarNear || document.hidden || generation !== avatarGeneration) return;
     avatarController = await mountAvatar(avatar, model, mobileQuery.matches, () => avatarNear && !document.hidden && generation === avatarGeneration);
     if (!avatarNear || document.hidden || generation !== avatarGeneration) { avatarController?.dispose(); avatarController=null; }
@@ -203,7 +203,7 @@ function updateAvatar() {
   floaters.forEach((card,i) => card.style.setProperty('--av', reducedMotion.matches ? 1 : clamp((p-(.1+i*.06))/.18)));
 }
 function update(time) {
-  raf=0; const dt=Math.min(32, previousTime ? time-previousTime : 1000/60); previousTime=time;
+  raf=0; const dt=Math.min(1000, previousTime ? time-previousTime : 1000/60); previousTime=time;
   let moving=false;
   for (const sequence of sequences) moving=sequence.update(dt)||moving;
   videos.forEach(v=>v.update()); updateAvatar();
