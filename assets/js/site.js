@@ -33,7 +33,7 @@ function updateScale(){if(!scaleActive)return;const rect=scale.getBoundingClient
 
 const avatar=document.querySelector('#avatar'),model=document.querySelector('#model'),floaters=[...avatar.querySelectorAll('.float-card')];
 let avatarActive=false,modelStarted=false;
-async function startModel(){if(modelStarted)return;modelStarted=true;await import('https://unpkg.com/@google/model-viewer@4.1.0/dist/model-viewer.min.js');model.src=model.dataset.src;if(!mobileQuery.matches)model.setAttribute('camera-controls','');model.addEventListener('load',()=>avatar.classList.add('avatar-ready'),{once:true})}
+async function startModel(){if(modelStarted)return;modelStarted=true;model.src=model.dataset.src;try{await import('https://unpkg.com/@google/model-viewer@4.1.0/dist/model-viewer.min.js');if(!mobileQuery.matches)model.setAttribute('camera-controls','');model.addEventListener('load',()=>avatar.classList.add('avatar-ready'),{once:true})}catch{avatar.classList.add('avatar-fallback')}}
 new IntersectionObserver(([entry])=>{if(entry.isIntersecting)startModel()},{rootMargin:mobileQuery.matches?'35% 0px':'75% 0px'}).observe(avatar);
 new IntersectionObserver(([entry])=>{avatarActive=entry.isIntersecting;if(avatarActive)requestUpdate()},{rootMargin:'20% 0px'}).observe(avatar);
 function updateAvatar(){if(!avatarActive)return;const rect=avatar.getBoundingClientRect(),travel=Math.max(1,avatar.offsetHeight-innerHeight),progress=clamp(-rect.top/travel);if(modelStarted&&!mobileQuery.matches)model.cameraOrbit=`${-34+progress*68}deg ${78-progress*4}deg auto`;floaters.forEach((card,index)=>card.style.setProperty('--av',clamp((progress-(.1+index*.06))/.18)))}
