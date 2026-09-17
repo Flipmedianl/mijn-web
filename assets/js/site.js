@@ -1,3 +1,4 @@
+import {IntroTransition} from './intro-transition.js?v=1';
 import {CinematicChapter} from './cinematic.js?v=1';
 const mobileQuery = matchMedia('(max-width:800px)');
 const reducedMotion = matchMedia('(prefers-reduced-motion:reduce)');
@@ -5,6 +6,7 @@ const clamp = n => Math.max(0, Math.min(1, n));
 let raf=0;
 function requestUpdate(){if(!raf&&!document.hidden)raf=requestAnimationFrame(update);}
 function progress(section){return clamp(-section.getBoundingClientRect().top/Math.max(1,section.offsetHeight-section.firstElementChild.clientHeight));}
+const intro=new IntroTransition(document.querySelector('#top'),document.querySelector('#system'),{mobileQuery,reducedMotion,requestUpdate});
 const chapters=[...document.querySelectorAll('[data-chapter]')].map(section=>new CinematicChapter(section,{mobileQuery,reducedMotion}));
 
 const avatar = document.querySelector('#avatar'), model = document.querySelector('#model');
@@ -32,7 +34,7 @@ function updateAvatar() {
   avatarController?.update(reducedMotion.matches ? .5 : p);
   floaters.forEach((card,i) => card.style.setProperty('--av', reducedMotion.matches ? 1 : clamp((p-(.1+i*.06))/.18)));
 }
-function update(){raf=0;updateAvatar();}
+function update(time){raf=0;const moving=intro.update(time);updateAvatar();if(moving)requestUpdate();}
 addEventListener('scroll',requestUpdate,{passive:true});
 addEventListener('resize',requestUpdate,{passive:true});
 mobileQuery.addEventListener('change',()=>{avatarGeneration++;avatarController?.dispose();avatarController=null;loadAvatar();requestUpdate();});
@@ -48,4 +50,4 @@ document.querySelectorAll('.reveal').forEach(e=>revealObserver.observe(e));
 requestUpdate();
 
 // Opt-in local diagnostics; nothing is uploaded.
-if(new URLSearchParams(location.search).has('audit'))window.flipmediaDiagnostics=()=>({chapters:chapters.map(c=>c.snapshot()),avatar:avatar.className});
+if(new URLSearchParams(location.search).has('audit'))window.flipmediaDiagnostics=()=>({intro:intro.snapshot(),chapters:chapters.map(c=>c.snapshot()),avatar:avatar.className});

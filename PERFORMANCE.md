@@ -1,3 +1,17 @@
+# Current intro transition
+
+The section-1/section-2 transition now uses `assets/js/intro-transition.js` and the existing sharp WebP assets. The following chapter-playback description applies only to the later #scale chapter; the first chapter described below is historical (af48632).
+
+- Frame 1 → 61 before #system first enters the viewport; then 61 → 31 during the overlap. Geometry includes the existing negative mobile margin. No change to intro height or section placement.
+- No video, controls, end card, autoplay clock or video seeking in #top. Scroll direction controls the trajectory. Small frame catch-up is bounded; there is no perpetual idle animation loop.
+- Fully covered: cancel loading, retain one decoded image and the unchanged canvas. On return, anchor to the exact last rendered frame and join the endpoint continuously. Do not reset the backing store or replace it with a starting poster.
+- At most 12 decoded mobile frames or 8 desktop frames, plus up to 2 transient decodes. Native source resolution; no DPR allocation growth. Prior HTTP caching, bounded concurrency, wanted-frame eviction protection and reduced-motion behavior remain.
+- Reduced motion retains a static image without loading the sequence. Background tabs suspend work. Failed assets keep the existing image; no retry loop.
+- New tests: `node tests/intro-transition.cjs` and deployed `tests/transition.html`. Earlier `tests/performance.html` and cinematic production measurements describe the previous two-video release, not this transition.
+- Avatar code/model and later chapter video/controller are unchanged. The mobile full intro sequence is 1,566,736 bytes versus the replaced 616,187-byte movie: reversibility costs additional media bytes; no unmeasured load-speed improvement is claimed.
+
+---
+
 # Cinematic playback
 
 The site is static GitHub Pages, deployed from `main`. The earlier frame-buffer implementation is preserved in history and backup branch `backup/before-cinematic-chapters-60db61b`; the current visitor path does not use canvas or fetch/decode frame sequences.
