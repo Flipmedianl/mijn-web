@@ -12,6 +12,7 @@ class FramePool {
   constructor() { this.jobs = new Map(); this.running = 0; }
   reconcile(owner, frames) {
     const wanted = new Set(frames);
+    owner.wanted = wanted;
     for (const [key, job] of this.jobs) {
       if (job.owner === owner && !wanted.has(job.frame)) {
         if (job.started) job.controller.abort(); else this.jobs.delete(key);
@@ -93,7 +94,11 @@ class FrameSequence {
   trim() {
     const budget = (this.mobile ? 32 : 64)*1024*1024;
     let bytes = [...this.cache.values()].reduce((n,i) => n+i.width*i.height*4, 0);
-    const order = [...this.cache.keys()].sort((a,b) => Math.abs(b-this.current)-Math.abs(a-this.current));
+    // Evict stale history before the directional buffer. Distance alone discards
+    // the farthest wanted frames, causing load/decode/evict loops while idle.
+    const order = [...this.cache.keys()].sort((a,b) =>
+      Number(this.wanted?.has(a) || false)-Number(this.wanted?.has(b) || false) ||
+      Math.abs(b-this.current)-Math.abs(a-this.current));
     for (const key of order) {
       if (bytes <= budget) break;
       if (key === this.last) continue;
