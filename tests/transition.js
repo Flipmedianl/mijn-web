@@ -3,7 +3,16 @@ let frame,running=false,errors=[],networkErrors=[];
 const wait=ms=>new Promise(r=>setTimeout(r,ms));
 async function until(check,timeout=20000){const end=performance.now()+timeout;while(performance.now()<end){if(check())return;await wait(100);}throw new Error('Timeout waiting for intro frame');}
 function snapshot(){const w=frame.contentWindow,d=w.document;return {y:w.scrollY,viewport:[w.innerWidth,w.innerHeight],intro:w.flipmediaDiagnostics?.().intro,systemTop:d.querySelector('#system').getBoundingClientRect().top,controls:d.querySelectorAll('#top button,#top video').length,resources:w.performance.getEntriesByType('resource').map(r=>({url:r.name,bytes:r.encodedBodySize,status:r.responseStatus})),errors:[...errors],networkErrors:[...networkErrors]};}
-async function at(y){const w=frame.contentWindow;w.scrollTo({top:y,behavior:'instant'});await wait(150);await until(()=>{const s=w.flipmediaDiagnostics?.().intro;return s&&(s.state==='offscreen'||Math.abs(s.frame-s.target)<=1);});await wait(150);return snapshot();}
+async function at(y){
+ const w=frame.contentWindow;w.scrollTo({top:y,behavior:'instant'});
+ await until(()=>{
+  const s=w.flipmediaDiagnostics?.().intro;if(!s)return false;
+  const actual=w.scrollY;
+  if(actual>=s.end)return s.state==='offscreen'&&s.running===0;
+  const expected=actual<=s.turn?1+60*Math.max(0,Math.min(1,actual/s.turn)):(s.retained??31)+(61-(s.retained??31))*(s.end-actual)/(s.end-s.turn);
+  return s.active&&Math.abs(s.target-expected)<.01&&Math.abs(s.current-s.target)<.01&&Math.abs(s.frame-s.target)<=.5&&s.running===0;
+ });return snapshot();
+}
 function load(width,height){
  if(running)return;running=true;errors=[];networkErrors=[];stage.replaceChildren();
  frame=document.createElement('iframe');frame.title='FLIPMEDIA overgang';frame.width=width;frame.height=height;
