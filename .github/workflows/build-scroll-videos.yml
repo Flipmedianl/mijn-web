@@ -17,46 +17,57 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install ffmpeg
         run: sudo apt-get update && sudo apt-get install -y ffmpeg
-      - name: Build mobile-friendly scroll videos
+      - name: Build fast scroll videos
         run: |
           mkdir -p assets/video /tmp/seq1 /tmp/seq2
-          n=1; for i in $(seq -w 1 61); do cp "frames/frame-0${i}.webp" "/tmp/seq1/frame-$(printf '%03d' $n).webp"; n=$((n+1)); done
-          n=1; for i in $(seq -w 62 122); do cp "frames/frame-0${i}.webp" "/tmp/seq2/frame-$(printf '%03d' $n).webp"; n=$((n+1)); done
-          ffmpeg -y -framerate 30 -i /tmp/seq1/frame-%03d.webp -vf "scale='min(1280,iw)':-2" -c:v libx264 -preset slow -crf 24 -g 1 -pix_fmt yuv420p -movflags +faststart assets/video/intro.mp4
-          ffmpeg -y -framerate 30 -i /tmp/seq2/frame-%03d.webp -vf "scale='min(1280,iw)':-2" -c:v libx264 -preset slow -crf 24 -g 1 -pix_fmt yuv420p -movflags +faststart assets/video/scale.mp4
+          n=1
+          for i in $(seq 1 61); do
+            src=$(printf 'frames/frame-%03d.webp' "$i")
+            dst=$(printf '/tmp/seq1/frame-%03d.webp' "$n")
+            cp "$src" "$dst"
+            n=$((n+1))
+          done
+          n=1
+          for i in $(seq 62 122); do
+            src=$(printf 'frames/frame-%03d.webp' "$i")
+            dst=$(printf '/tmp/seq2/frame-%03d.webp' "$n")
+            cp "$src" "$dst"
+            n=$((n+1))
+          done
+          ffmpeg -y -framerate 30 -i /tmp/seq1/frame-%03d.webp -vf "scale='min(960,iw)':-2" -c:v libx264 -preset medium -crf 27 -g 1 -pix_fmt yuv420p -movflags +faststart assets/video/intro.mp4
+          ffmpeg -y -framerate 30 -i /tmp/seq2/frame-%03d.webp -vf "scale='min(960,iw)':-2" -c:v libx264 -preset medium -crf 27 -g 1 -pix_fmt yuv420p -movflags +faststart assets/video/scale.mp4
           ls -lh assets/video/*.mp4
-      - name: Switch page from frame canvases to scroll videos
+      - name: Switch page to scroll videos
         run: |
           python - <<'PY'
           from pathlib import Path
           p=Path('index.html')
           s=p.read_text()
-          s=s.replace('<canvas class="seq"></canvas>','<video class="seq scroll-video" src="assets/video/intro.mp4" muted playsinline preload="auto"></video>',1)
-          s=s.replace('<canvas class="seq"></canvas>','<video class="seq scroll-video" src="assets/video/scale.mp4" muted playsinline preload="metadata"></video>',1)
+          s=s.replace('<canvas class="seq"></canvas>','<video class="seq scroll-video" src="assets/video/intro.mp4?v=1" muted playsinline preload="auto"></video>',1)
+          s=s.replace('<canvas class="seq"></canvas>','<video class="seq scroll-video" src="assets/video/scale.mp4?v=1" muted playsinline preload="metadata"></video>',1)
+          s=s.replace('.seq{position:absolute;inset:0;width:100%;height:100%}', '.seq{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}')
           start=s.index('<script>')
           end=s.index('</script>',start)+len('</script>')
           js='''<script>
 const mobile=matchMedia('(max-width:800px)').matches;
 const scrubs=[...document.querySelectorAll('.scrub')].map(sec=>({sec,v:sec.querySelector('.scroll-video'),last:-1}));
-let ticking=false;
-function update(){ticking=false;for(const s of scrubs){const r=s.sec.getBoundingClientRect(),travel=Math.max(1,s.sec.offsetHeight-innerHeight),p=Math.max(0,Math.min(1,-r.top/travel));if(s.v.duration&&Number.isFinite(s.v.duration)){const t=p*Math.max(0,s.v.duration-.001);if(Math.abs(t-s.last)>.012){s.v.currentTime=t;s.last=t}}const hero=s.sec.querySelector('.hero');if(hero){const f=Math.min(1,p/.28);hero.style.opacity=1-f;hero.style.transform=mobile?`translateY(${-f*18}px)`:`translateY(calc(-50% - ${f*28}px))`}const ov=s.sec.querySelector('.overlay2');if(ov){const f=Math.max(0,Math.min(1,(p-.08)/.18));ov.style.opacity=f;ov.style.transform=mobile?`translateY(${(1-f)*24}px)`:`translateY(calc(-50% + ${(1-f)*30}px))`}}avatarUpdate()}
-function requestTick(){if(!ticking){ticking=true;requestAnimationFrame(update)}}
 const avatar=document.querySelector('.avatar-sec'),model=document.querySelector('#model'),floaters=[...avatar.querySelectorAll('.float-card')];
-if(model){model.addEventListener('error',()=>{if(!model.dataset.fallback){model.dataset.fallback='1';model.src='assets/avatar-optimized.glb?v=4'}})}
+let ticking=false;
 function avatarUpdate(){const r=avatar.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight)return;const travel=Math.max(1,avatar.offsetHeight-innerHeight),p=Math.max(0,Math.min(1,-r.top/travel));if(model)model.cameraOrbit=`${-38+p*76}deg ${80-p*5}deg auto`;floaters.forEach((x,j)=>x.style.setProperty('--av',Math.max(0,Math.min(1,(p-(.1+j*.06))/.18))))}
+function update(){ticking=false;for(const s of scrubs){const r=s.sec.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight)continue;const travel=Math.max(1,s.sec.offsetHeight-innerHeight),p=Math.max(0,Math.min(1,-r.top/travel));if(s.v.duration&&Number.isFinite(s.v.duration)){const t=p*Math.max(0,s.v.duration-.001);if(Math.abs(t-s.last)>.016){s.v.currentTime=t;s.last=t}}const hero=s.sec.querySelector('.hero');if(hero){const f=Math.min(1,p/.28);hero.style.opacity=1-f;hero.style.transform=mobile?`translateY(${-f*18}px)`:`translateY(calc(-50% - ${f*28}px))`}const ov=s.sec.querySelector('.overlay2');if(ov){const f=Math.max(0,Math.min(1,(p-.08)/.18));ov.style.opacity=f;ov.style.transform=mobile?`translateY(${(1-f)*24}px)`:`translateY(calc(-50% + ${(1-f)*30}px))`}}avatarUpdate()}
+function requestTick(){if(!ticking){ticking=true;requestAnimationFrame(update)}}
 for(const s of scrubs){s.v.addEventListener('loadedmetadata',requestTick);s.v.addEventListener('canplay',requestTick)}
 addEventListener('scroll',requestTick,{passive:true});addEventListener('resize',requestTick,{passive:true});requestTick();
 const revealObserver=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('seen');revealObserver.unobserve(e.target)}}),{rootMargin:'0px 0px -12% 0px',threshold:.08});document.querySelectorAll('.reveal').forEach(x=>revealObserver.observe(x));
 </script>'''
           s=s[:start]+js+s[end:]
-          s=s.replace('.seq{position:absolute;inset:0;width:100%;height:100%}', '.seq{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}')
           p.write_text(s)
           PY
-      - name: Commit videos and fast page
+      - name: Commit fast version
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add assets/video index.html
           git diff --cached --quiet && exit 0
-          git commit -m "Use fast scroll videos instead of 122 frame loads"
+          git commit -m "Use lightweight scroll videos"
           git push
