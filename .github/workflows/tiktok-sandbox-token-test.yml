@@ -1,0 +1,32 @@
+name: TikTok Sandbox Token Test
+
+on:
+  workflow_dispatch:
+    inputs:
+      authorization_code:
+        description: "One-time TikTok authorization code from callback"
+        required: true
+        type: string
+
+jobs:
+  exchange-token:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Exchange TikTok authorization code
+        env:
+          TIKTOK_CLIENT_KEY: ${{ secrets.TIKTOK_CLIENT_KEY }}
+          TIKTOK_CLIENT_SECRET: ${{ secrets.TIKTOK_CLIENT_SECRET }}
+          TIKTOK_AUTH_CODE: ${{ inputs.authorization_code }}
+        run: |
+          set -euo pipefail
+          test -n "$TIKTOK_CLIENT_KEY"
+          test -n "$TIKTOK_CLIENT_SECRET"
+          test -n "$TIKTOK_AUTH_CODE"
+          RESPONSE=$(curl --fail-with-body -sS -X POST "https://open.tiktokapis.com/v2/oauth/token/" \
+            -H "Content-Type: application/x-www-form-urlencoded" \
+            --data-urlencode "client_key=$TIKTOK_CLIENT_KEY" \
+            --data-urlencode "client_secret=$TIKTOK_CLIENT_SECRET" \
+            --data-urlencode "code=$TIKTOK_AUTH_CODE" \
+            --data-urlencode "grant_type=authorization_code" \
+            --data-urlencode "redirect_uri=https://flipmedianl.github.io/mijn-web/tiktok-callback.html")
+          python3 -c 'import json,sys; d=json.loads(sys.argv[1]); assert d.get("access_token"), d; print("TikTok access token ontvangen."); print("Scopes:", d.get("scope","")); print("Open ID aanwezig:", bool(d.get("open_id"))); print("Refresh token aanwezig:", bool(d.get("refresh_token")))' "$RESPONSE"
