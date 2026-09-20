@@ -23,6 +23,7 @@ jobs:
       - name: Build multi-clip Short
         env:
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python scripts/build-flipmedia-short.py
       - name: Upload finished Short
         uses: actions/upload-artifact@v4
