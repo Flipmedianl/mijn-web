@@ -1,0 +1,20 @@
+name: TikTok Sandbox OAuth Test
+on:
+  workflow_dispatch:
+    inputs:
+      auth_code:
+        description: "TikTok authorization code from callback URL"
+        required: true
+        type: string
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Exchange code and test Content Posting API
+        env:
+          TIKTOK_AUTH_CODE: ${{ inputs.auth_code }}
+          TIKTOK_CLIENT_KEY: ${{ secrets.TIKTOK_CLIENT_KEY }}
+          TIKTOK_CLIENT_SECRET: ${{ secrets.TIKTOK_CLIENT_SECRET }}
+        run: python scripts/tiktok-sandbox-test.py
