@@ -44,18 +44,25 @@ for i,(text,q) in enumerate(scenes):
     p=f"{OUT}/raw-{i:02}.mp4"; download(fs[0]["link"],p)
     clips.append((p,text,v.get("url")))
 
-# Generate an original simple instrumental bed locally (no third-party track).
+# Generate a genuinely new instrumental bed for every render.
+# Each render gets a fresh random seed, chord progression, tempo, rhythm and timbre.
 sr=44100; scene_dur=1.75; dur=len(scenes)*scene_dur
+seed=int.from_bytes(os.urandom(8),"big"); rng=random.Random(seed)
+tempo=rng.choice([84,92,100,108,116,124,132])
+roots=rng.sample([82.41,92.50,98.00,110.00,123.47,130.81,146.83,164.81,174.61,196.00],4)
+waveform=rng.choice(["sine","softsquare","pluck"])
 with wave.open(f"{OUT}/music.wav","w") as w:
     w.setparams((2,2,sr,int(sr*dur),"NONE","not compressed"))
-    notes=random.choice([[110,138.59,164.81,146.83],[98,123.47,146.83,130.81],[130.81,164.81,196,174.61],[82.41,110,123.47,98]])
     for n in range(int(sr*dur)):
-        t=n/sr; beat=int(t*2); f=notes[(beat//2)%len(notes)] * random.choice([1.0,1.0,1.0,2.0])
-        env=random.choice([.075,.085,.095,.105])*(0.35+0.65*math.exp(-5*((t*2)%1)))
-        s=env*(math.sin(2*math.pi*f*t)+.35*math.sin(2*math.pi*2*f*t))
+        t=n/sr; beat=t*tempo/60.0; step=int(beat)%len(roots); f=roots[step]
+        phase=2*math.pi*f*t
+        if waveform=="sine": tone=math.sin(phase)+.22*math.sin(2*phase)
+        elif waveform=="softsquare": tone=math.tanh(1.4*math.sin(phase))*.72+.12*math.sin(2*phase)
+        else: tone=(math.sin(phase)+.3*math.sin(3*phase))*math.exp(-3*(beat%1))
+        pulse=0.45+0.55*math.exp(-5*(beat%1))
+        s=.075*pulse*tone
         val=max(-32767,min(32767,int(s*32767)))
         w.writeframesraw(struct.pack("<hh",val,val))
-
 # Render each scene to consistent vertical format. drawtext is deliberately bold/readable.
 parts=[]
 font="/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
