@@ -40,7 +40,7 @@ for i,(text,q) in enumerate(scenes):
     clips.append((p,text,v.get("url")))
 
 # Generate an original simple instrumental bed locally (no third-party track).
-sr=44100; dur=len(scenes)*2.25
+sr=44100; scene_dur=1.75; dur=len(scenes)*scene_dur
 with wave.open(f"{OUT}/music.wav","w") as w:
     w.setparams((2,2,sr,int(sr*dur),"NONE","not compressed"))
     notes=[110,138.59,164.81,146.83]
@@ -58,10 +58,10 @@ for i,(p,text,url) in enumerate(clips):
     safe=text.replace("\\","\\\\").replace(":","\\:").replace("'","\\'")
     out=f"{OUT}/scene-{i:02}.mp4"
     vf=("scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,"
-        "drawbox=x=60:y=1320:w=960:h=360:color=black@0.58:t=fill,"
+        "drawbox=x=70:y=1325:w=940:h=260:color=black@0.64:t=fill,"
         f"drawtext=fontfile={font}:text='{safe}':fontcolor=white:fontsize=64:"
         "x=(w-text_w)/2:y=1400:box=0")
-    subprocess.run(["ffmpeg","-y","-stream_loop","-1","-i",p,"-t","2.25","-vf",vf,
+    subprocess.run(["ffmpeg","-y","-stream_loop","-1","-i",p,"-t",str(scene_dur),"-vf",vf,
                     "-an","-r","30","-c:v","libx264","-preset","veryfast","-crf","22",out],check=True)
     parts.append(out)
 with open(f"{OUT}/list.txt","w") as h:
