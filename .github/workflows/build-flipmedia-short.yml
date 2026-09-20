@@ -8,7 +8,7 @@ on:
       - ".github/workflows/build-flipmedia-short.yml"
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   build:
@@ -25,6 +25,13 @@ jobs:
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python scripts/build-flipmedia-short.py
+      - name: Save used Pexels history
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add content/used-pexels-ids.json
+          git diff --cached --quiet || git commit -m "Remember Pexels clips used by FLIPMEDIA"
+          git push
       - name: Upload finished Short
         uses: actions/upload-artifact@v4
         with:
