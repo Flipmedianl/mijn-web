@@ -1,0 +1,32 @@
+name: Build FLIPMEDIA multi-clip Short
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "scripts/build-flipmedia-short.py"
+      - ".github/workflows/build-flipmedia-short.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build multi-clip Short
+        env:
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+        run: python scripts/build-flipmedia-short.py
+      - name: Upload finished Short
+        uses: actions/upload-artifact@v4
+        with:
+          name: flipmedia-multiclip-short
+          path: |
+            content/short/flipmedia-short.mp4
+            content/short/manifest.json
+          retention-days: 7
