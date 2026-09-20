@@ -23,5 +23,6 @@ jobs:
         env:
           TIKTOK_AUTH_CODE: ${{ inputs.auth_code }}
           TIKTOK_CLIENT_KEY: ${{ secrets.TIKTOK_CLIENT_KEY }}
-          TIKTOK_CLIENT_SECRET: ${{ secrets.TIKTOK_CLIENT_SECRET }}\n          TIKTOK_VIDEO_FILE: content/short/flipmedia-short.mp4
+          TIKTOK_CLIENT_SECRET: ${{ secrets.TIKTOK_CLIENT_SECRET }}
+          TIKTOK_VIDEO_FILE: content/short/flipmedia-short.mp4
         run: python scripts/tiktok-sandbox-test.py
