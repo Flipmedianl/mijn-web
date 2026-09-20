@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import json, os, subprocess, sys, urllib.parse, urllib.request, wave, math, struct, random
+import json, os, subprocess, sys, urllib.parse, urllib.request, urllib.error, wave, math, struct, random, time
 
 KEY=os.environ["PEXELS_API_KEY"]
 OUT="content/short"
@@ -13,7 +13,19 @@ def gemini_content():
     body=json.dumps({"contents":[{"parts":[{"text":prompt}]}],"generationConfig":{"responseMimeType":"application/json"}}).encode()
     url="https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent"
     req=urllib.request.Request(url,data=body,headers={"Content-Type":"application/json","x-goog-api-key":GEMINI_KEY},method="POST")
-    with urllib.request.urlopen(req,timeout=60) as r: data=json.load(r)
+    data=None
+    for attempt in range(5):
+        try:
+            with urllib.request.urlopen(req,timeout=60) as r:
+                data=json.load(r)
+            break
+        except urllib.error.HTTPError as e:
+            if e.code not in (429,500,502,503,504) or attempt==4:
+                raise
+            time.sleep(3*(attempt+1))
+        except urllib.error.URLError:
+            if attempt==4: raise
+            time.sleep(3*(attempt+1))
     raw=data["candidates"][0]["content"]["parts"][0]["text"]
     obj=json.loads(raw)
     rows=obj.get("scenes",[])
