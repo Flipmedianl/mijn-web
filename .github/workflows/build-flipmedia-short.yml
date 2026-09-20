@@ -1,4 +1,4 @@
-name: Build FLIPMEDIA multi-clip Short
+name: Build FLIPMEDIA multi-clip Short\n# render trigger v4
 
 on:
   workflow_dispatch:
