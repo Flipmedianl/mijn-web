@@ -10,9 +10,9 @@ GEMINI_KEY=os.environ.get("GEMINI_API_KEY","")
 def gemini_content():
     if not GEMINI_KEY: raise RuntimeError("GEMINI_API_KEY ontbreekt")
     prompt="""Maak exact 8 korte scenes voor een Nederlandse verticale FLIPMEDIA Short over websites, online marketing, AI voor ondernemers, conversie, SEO of digitale groei. Kies elke run zelf een fris specifiek onderwerp. Geen hergebruik van voorbeeldteksten. Scene 1 is een sterke hook. Elke scene maximaal 52 tekens. Scene 8 is een korte FLIPMEDIA CTA. Geef per scene ook een Engelse Pexels videozoekterm gericht op schermen, apparaten, handen, abstracte technologie of interfaces; vermijd herkenbare gezichten. Antwoord ALLEEN als geldige JSON: {"title":"...","scenes":[{"text":"...","query":"..."}]}"""
-    body=json.dumps({"contents":[{"parts":[{"text":prompt}]}],"generationConfig":{"responseMimeType":"application/json","temperature":1.15}}).encode()
-    url="https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key="+urllib.parse.quote(GEMINI_KEY)
-    req=urllib.request.Request(url,data=body,headers={"Content-Type":"application/json"},method="POST")
+    body=json.dumps({"contents":[{"parts":[{"text":prompt}]}],"generationConfig":{"responseMimeType":"application/json"}}).encode()
+    url="https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent"
+    req=urllib.request.Request(url,data=body,headers={"Content-Type":"application/json","x-goog-api-key":GEMINI_KEY},method="POST")
     with urllib.request.urlopen(req,timeout=60) as r: data=json.load(r)
     raw=data["candidates"][0]["content"]["parts"][0]["text"]
     obj=json.loads(raw)
