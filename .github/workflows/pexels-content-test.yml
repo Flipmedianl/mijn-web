@@ -1,0 +1,35 @@
+name: Pexels content test
+
+on:
+  workflow_dispatch:
+    inputs:
+      query:
+        description: "Zoekterm voor Pexels-video"
+        required: true
+        default: "web design technology"
+
+permissions:
+  contents: read
+
+jobs:
+  download:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Download Pexels video
+        env:
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+        run: python scripts/pexels-download.py "${{ inputs.query }}"
+      - name: Toon resultaat
+        run: cat content/pexels/source.json
+      - name: Upload video als artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pexels-test-video
+          path: |
+            content/pexels/source.mp4
+            content/pexels/source.json
+          retention-days: 3
