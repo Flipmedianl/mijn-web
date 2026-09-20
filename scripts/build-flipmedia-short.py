@@ -5,22 +5,21 @@ KEY=os.environ["PEXELS_API_KEY"]
 OUT="content/short"
 os.makedirs(OUT,exist_ok=True)
 
-# First FLIPMEDIA format: one coherent topic, with a separate visual search for every beat.
-content_sets=[
- [("3 signalen dat je homepage niet werkt","website analytics screen"),("1. Niemand snapt direct wat je aanbiedt","website interface close up"),("Maak je belofte zichtbaar bovenaan","laptop website screen"),("2. Je belangrijkste knop valt niet op","smartphone website interface"),("Geef elke pagina één duidelijke actie","computer mouse website"),("3. Mobiel voelt onrustig","mobile website scrolling"),("Schrap afleiding en maak ruimte","minimal digital interface"),("Meer praktische webtips? Volg FLIPMEDIA","abstract technology screen")],
- [("Je website kan sneller zonder redesign","website speed technology"),("Begin met zware afbeeldingen","image compression computer"),("Gebruik moderne formaten en kleinere bestanden","computer files interface"),("Laad alleen wat bezoekers echt nodig hebben","loading website screen"),("Controleer vooral je mobiele versie","smartphone website close up"),("Elke seconde telt voor aandacht","digital timer technology"),("Test. Verbeter. Meet opnieuw.","website analytics dashboard"),("Meer slimme webtips? Volg FLIPMEDIA","futuristic digital interface")],
- [("Waarom klikken bezoekers niet?","website cursor screen"),("Je knop zegt misschien te weinig","website button interface"),("Vervang vaag door een duidelijke actie","computer website close up"),("Laat zien wat er na de klik gebeurt","smartphone app interface"),("Zet de belangrijkste actie in beeld","website interface macro"),("Gebruik minder concurrerende knoppen","minimal website screen"),("Duidelijkheid wint van drukte","abstract digital interface"),("Meer conversietips? Volg FLIPMEDIA","technology screen close up")],
- [("3 snelle verbeteringen voor je mobiele site","smartphone website screen"),("1. Maak tekst direct scanbaar","mobile reading screen"),("2. Geef knoppen genoeg ruimte","smartphone interface close up"),("3. Haal onnodige elementen weg","minimal mobile interface"),("Test met één hand op je telefoon","hand holding smartphone back view"),("Controleer snelheid én duidelijkheid","website speed mobile"),("Kleine verbeteringen tellen op","digital analytics interface"),("Meer webtips? Volg FLIPMEDIA","abstract technology interface")]
-]
-# Rotate content automatically so consecutive runs do not reuse the same script.
-state_path=f"{OUT}/../last-content.txt"
-last=-1
-try:
-    with open(state_path) as sh: last=int(sh.read().strip())
-except Exception: pass
-choice=(last+1)%len(content_sets)
-scenes=content_sets[choice]
-with open(state_path,"w") as sh: sh.write(str(choice))
+# Gemini writes a fresh FLIPMEDIA concept on every run.
+GEMINI_KEY=os.environ.get("GEMINI_API_KEY","")
+def gemini_content():
+    if not GEMINI_KEY: raise RuntimeError("GEMINI_API_KEY ontbreekt")
+    prompt="""Maak exact 8 korte scenes voor een Nederlandse verticale FLIPMEDIA Short over websites, online marketing, AI voor ondernemers, conversie, SEO of digitale groei. Kies elke run zelf een fris specifiek onderwerp. Geen hergebruik van voorbeeldteksten. Scene 1 is een sterke hook. Elke scene maximaal 52 tekens. Scene 8 is een korte FLIPMEDIA CTA. Geef per scene ook een Engelse Pexels videozoekterm gericht op schermen, apparaten, handen, abstracte technologie of interfaces; vermijd herkenbare gezichten. Antwoord ALLEEN als geldige JSON: {"title":"...","scenes":[{"text":"...","query":"..."}]}"""
+    body=json.dumps({"contents":[{"parts":[{"text":prompt}]}],"generationConfig":{"responseMimeType":"application/json","temperature":1.15}}).encode()
+    url="https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key="+urllib.parse.quote(GEMINI_KEY)
+    req=urllib.request.Request(url,data=body,headers={"Content-Type":"application/json"},method="POST")
+    with urllib.request.urlopen(req,timeout=60) as r: data=json.load(r)
+    raw=data["candidates"][0]["content"]["parts"][0]["text"]
+    obj=json.loads(raw)
+    rows=obj.get("scenes",[])
+    if len(rows)!=8: raise RuntimeError("Gemini gaf niet exact 8 scenes")
+    return obj.get("title","FLIPMEDIA Short"),[(str(x["text"])[:70],str(x["query"])[:100]) for x in rows]
+title,scenes=gemini_content()
 clips=[]
 def get_json(url):
     req=urllib.request.Request(url,headers={"Authorization":KEY,"User-Agent":"FLIPMEDIA/1.0"})
@@ -94,5 +93,5 @@ subprocess.run(["ffmpeg","-y","-f","concat","-safe","0","-i",f"{OUT}/list.txt","
                 "-map","0:v","-map","1:a","-c:v","copy","-c:a","aac","-b:a","160k","-shortest",
                 "-movflags","+faststart",f"{OUT}/flipmedia-short.mp4"],check=True)
 with open(f"{OUT}/manifest.json","w") as h:
-    json.dump({"title":"3 redenen waarom bezoekers je website verlaten","scenes":[{"text":s[1],"source":s[2]} for s in clips],"music":"originally synthesized for FLIPMEDIA"},h,indent=2,ensure_ascii=False)
+    json.dump({"title":title,"scenes":[{"text":s[1],"source":s[2]} for s in clips],"music":"freshly synthesized for this FLIPMEDIA render"},h,indent=2,ensure_ascii=False)
 print(f"READY {OUT}/flipmedia-short.mp4")
