@@ -1,5 +1,8 @@
 name: TikTok Sandbox OAuth Test
 on:
+  push:
+    branches: [main]
+    paths: [.github/tiktok-live-test-trigger]
   workflow_dispatch:
     inputs:
       auth_code:
