@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import json, os, subprocess, sys, urllib.parse, urllib.request, wave, math, struct
+import json, os, subprocess, sys, urllib.parse, urllib.request, wave, math, struct, random
 
 KEY=os.environ["PEXELS_API_KEY"]
 OUT="content/short"
@@ -43,10 +43,10 @@ for i,(text,q) in enumerate(scenes):
 sr=44100; scene_dur=1.75; dur=len(scenes)*scene_dur
 with wave.open(f"{OUT}/music.wav","w") as w:
     w.setparams((2,2,sr,int(sr*dur),"NONE","not compressed"))
-    notes=[110,138.59,164.81,146.83]
+    notes=random.choice([[110,138.59,164.81,146.83],[98,123.47,146.83,130.81],[130.81,164.81,196,174.61],[82.41,110,123.47,98]])
     for n in range(int(sr*dur)):
-        t=n/sr; beat=int(t*2); f=notes[(beat//2)%len(notes)]
-        env=.10*(0.35+0.65*math.exp(-5*((t*2)%1)))
+        t=n/sr; beat=int(t*2); f=notes[(beat//2)%len(notes)] * random.choice([1.0,1.0,1.0,2.0])
+        env=random.choice([.075,.085,.095,.105])*(0.35+0.65*math.exp(-5*((t*2)%1)))
         s=env*(math.sin(2*math.pi*f*t)+.35*math.sin(2*math.pi*2*f*t))
         val=max(-32767,min(32767,int(s*32767)))
         w.writeframesraw(struct.pack("<hh",val,val))
