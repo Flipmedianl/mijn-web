@@ -66,7 +66,7 @@ for i,(p,text,url) in enumerate(clips):
     if line: lines.append(line)
     wrapped="\\n".join(lines[:3])
     safe=wrapped.replace("\\","\\\\").replace(":","\\:").replace("'","\\'")
-    out=f"{OUT}/scene-{i:02}.mp4"
+    wrapped="\\n".join(lines[:3])\n    textfile=f"{OUT}/caption-{i:02}.txt"\n    with open(textfile,"w",encoding="utf-8") as th: th.write(wrapped)\n    out=f"{OUT}/scene-{i:02}.mp4"
     vf=("scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,"
         "drawbox=x=90:y=1160:w=900:h=430:color=black@0.78:t=fill,"
         f"drawtext=fontfile={font}:textfile='{textfile}':fontcolor=white:fontsize=34:line_spacing=12:"
