@@ -9,7 +9,7 @@ os.makedirs(OUT,exist_ok=True)
 GEMINI_KEY=os.environ.get("GEMINI_API_KEY","")
 def gemini_content():
     if not GEMINI_KEY: raise RuntimeError("GEMINI_API_KEY ontbreekt")
-    prompt="""Maak exact 8 korte scenes voor een Nederlandse verticale FLIPMEDIA Short over websites, online marketing, AI voor ondernemers, conversie, SEO of digitale groei. Kies elke run zelf een fris specifiek onderwerp. Geen hergebruik van voorbeeldteksten. Scene 1 is een sterke hook. Elke scene maximaal 52 tekens. Scene 8 is een korte FLIPMEDIA CTA. Geef per scene ook een Engelse Pexels videozoekterm gericht op schermen, apparaten, handen, abstracte technologie of interfaces; vermijd herkenbare gezichten. Antwoord ALLEEN als geldige JSON: {"title":"...","scenes":[{"text":"...","query":"..."}]}"""
+    prompt="""Maak exact 8 korte scenes voor een Nederlandse verticale FLIPMEDIA Short over websites, online marketing, AI voor ondernemers, conversie, SEO of digitale groei. Kies elke run zelf een fris specifiek onderwerp. Geen hergebruik van voorbeeldteksten. BELANGRIJK: scene 1 moet altijd een duidelijke intro/hook zijn die het onderwerp aankondigt vóór een opsomming, bijvoorbeeld qua functie: wat gaat de kijker leren? Begin NOOIT direct met "Fout 1", "Tip 1", "Reden 1", "Stap 1" of een ander genummerd punt. Scenes 2 t/m 7 bouwen logisch verder met korte uitleg en concrete punten. Scene 8 is een korte FLIPMEDIA CTA. Elke scene maximaal 52 tekens. Geef per scene ook een Engelse Pexels videozoekterm gericht op schermen, apparaten, handen, abstracte technologie of interfaces; vermijd herkenbare gezichten. Antwoord ALLEEN als geldige JSON: {"title":"...","scenes":[{"text":"...","query":"..."}]}"""
     body=json.dumps({"contents":[{"parts":[{"text":prompt}]}],"generationConfig":{"responseMimeType":"application/json"}}).encode()
     url="https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent"
     req=urllib.request.Request(url,data=body,headers={"Content-Type":"application/json","x-goog-api-key":GEMINI_KEY},method="POST")
@@ -33,6 +33,12 @@ def gemini_content():
     return obj.get("title","FLIPMEDIA Short"),[(str(x["text"])[:70],str(x["query"])[:100]) for x in rows]
 title,scenes=gemini_content()
 clips=[]
+history_file="content/used-pexels-ids.json"
+try:
+    with open(history_file,encoding="utf-8") as h: used_ids=set(json.load(h))
+except (FileNotFoundError,json.JSONDecodeError):
+    used_ids=set()
+new_ids=[]
 def get_json(url):
     req=urllib.request.Request(url,headers={"Authorization":KEY,"User-Agent":"FLIPMEDIA/1.0"})
     with urllib.request.urlopen(req,timeout=30) as r:return json.load(r)
@@ -47,13 +53,20 @@ for i,(text,q) in enumerate(scenes):
     api="https://api.pexels.com/videos/search?"+urllib.parse.urlencode({"query":q,"orientation":"portrait","per_page":10})
     vs=get_json(api).get("videos",[])
     if not vs: raise SystemExit("Geen video voor "+q)
-    v=vs[i%len(vs)]
+    choices=[v for v in vs if str(v.get("id")) not in used_ids and str(v.get("id")) not in new_ids]
+    if not choices: raise SystemExit("Geen ongebruikte Pexels-video voor "+q)
+    v=choices[0]
+    new_ids.append(str(v.get("id")))
     fs=[x for x in v.get("video_files",[]) if x.get("file_type")=="video/mp4"]
     portrait=[x for x in fs if (x.get("height") or 0)>(x.get("width") or 0)]
     fs=portrait or fs
     fs.sort(key=lambda x:abs((x.get("height") or 1920)-1920)+abs((x.get("width") or 1080)-1080))
     p=f"{OUT}/raw-{i:02}.mp4"; download(fs[0]["link"],p)
     clips.append((p,text,v.get("url")))
+
+os.makedirs(os.path.dirname(history_file),exist_ok=True)
+with open(history_file,"w",encoding="utf-8") as h:
+    json.dump(sorted(used_ids.union(new_ids)),h,indent=2)
 
 # Generate a genuinely new instrumental bed for every render.
 # Each render gets a fresh random seed, chord progression, tempo, rhythm and timbre.
