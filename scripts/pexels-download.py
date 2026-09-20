@@ -18,7 +18,17 @@ choices.sort(key=lambda f: abs((f.get("height") or 1920)-1920)+abs((f.get("width
 f=choices[0]
 os.makedirs("content/pexels",exist_ok=True)
 out="content/pexels/source.mp4"
-urllib.request.urlretrieve(f["link"],out)
-meta={"query":query,"pexels_video_id":v.get("id"),"pexels_url":v.get("url"),"creator":v.get("user",{}).get("name"),"width":f.get("width"),"height":f.get("height"),"file":out}
+# Pexels CDN can reject Python's default urlretrieve request; send normal media headers.
+media_req=urllib.request.Request(f["link"],headers={
+    "User-Agent":"Mozilla/5.0 (compatible; FLIPMEDIA-Content-Automation/1.0)",
+    "Accept":"video/mp4,video/*;q=0.9,*/*;q=0.8",
+    "Referer":"https://www.pexels.com/"
+})
+with urllib.request.urlopen(media_req,timeout=90) as src, open(out,"wb") as dst:
+    while True:
+        chunk=src.read(1024*1024)
+        if not chunk: break
+        dst.write(chunk)
+meta={"query":query,"pexels_video_id":v.get("id"),"pexels_url":v.get("url"),"creator":v.get("user",{}).get("name"),"width":f.get("width"),"height":f.get("height"),"file":out,"bytes":os.path.getsize(out)}
 with open("content/pexels/source.json","w",encoding="utf-8") as h: json.dump(meta,h,ensure_ascii=False,indent=2)
 print(json.dumps(meta,ensure_ascii=False))
