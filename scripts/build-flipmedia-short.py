@@ -71,7 +71,7 @@ for i,(p,text,url) in enumerate(clips):
     out=f"{OUT}/scene-{i:02}.mp4"
     vf=("scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,"
         "drawbox=x=90:y=1160:w=900:h=430:color=black@0.78:t=fill,"
-        f"drawtext=fontfile={font}:textfile='{textfile}':fontcolor=white:fontsize=34:line_spacing=12:"
+        f"drawtext=fontfile={font}:textfile='{textfile}':fontcolor=white:fontsize=42:line_spacing=14:"
         "x=(w-text_w)/2:y=(h-text_h)/2+360:box=0")
     subprocess.run(["ffmpeg","-y","-stream_loop","-1","-i",p,"-t",str(scene_dur),"-vf",vf,
                     "-an","-r","30","-c:v","libx264","-preset","veryfast","-crf","22",out],check=True)
