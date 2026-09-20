@@ -10,7 +10,7 @@ scenes=[
  ("Je website verliest bezoekers in 5 seconden","abstract website error screen"),
  ("1. Je eerste scherm is niet duidelijk","website interface close up"),
  ("Bezoekers moeten direct snappen wat je doet","smartphone website screen close up"),
- ("2. Een trage site kost aandacht","loading screen technology"),
+ ("2. Te langzaam","loading screen technology"),
  ("Maak mobiel snelheid je prioriteit","smartphone screen interface"),
  ("3. Te veel tekst wordt overgeslagen","computer website interface close up"),
  ("Maak het visueel. Kort. Duidelijk.","abstract digital interface"),
@@ -55,10 +55,20 @@ with wave.open(f"{OUT}/music.wav","w") as w:
 parts=[]
 font="/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
 for i,(p,text,url) in enumerate(clips):
-    safe=text.replace("\\","\\\\").replace(":","\\:").replace("'","\\'")
+    # Hard-wrap captions so no line can ever run outside the 1080px frame.
+    words=text.split(); lines=[]; line=""
+    for word in words:
+        trial=(line+" "+word).strip()
+        if len(trial) > 18 and line:
+            lines.append(line); line=word
+        else:
+            line=trial
+    if line: lines.append(line)
+    wrapped="\\n".join(lines[:3])
+    safe=wrapped.replace("\\","\\\\").replace(":","\\:").replace("'","\\'")
     out=f"{OUT}/scene-{i:02}.mp4"
     vf=("scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,"
-        "drawbox=x=55:y=1190:w=970:h=360:color=black@0.78:t=fill,"
+        "drawbox=x=90:y=1160:w=900:h=430:color=black@0.78:t=fill,"
         f"drawtext=fontfile={font}:text='{safe}':fontcolor=white:fontsize=64:"
         "x=(w-text_w)/2:y=1400:box=0")
     subprocess.run(["ffmpeg","-y","-stream_loop","-1","-i",p,"-t",str(scene_dur),"-vf",vf,
