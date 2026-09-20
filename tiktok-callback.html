@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="nl">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FLIPMEDIA TikTok Sandbox</title>
+<style>body{font-family:Arial,sans-serif;background:#0b0b0b;color:#fff;max-width:720px;margin:0 auto;padding:40px 20px}main{background:#171717;border:1px solid #333;border-radius:18px;padding:28px}h1{color:#f3c65f}input,button{box-sizing:border-box;width:100%;padding:14px;margin-top:10px;border-radius:10px;border:1px solid #555;font-size:16px}button{background:#fe2c55;color:#fff;border:0;font-weight:700;cursor:pointer}.ok{color:#65d98a}.muted{color:#bbb;font-size:14px;line-height:1.5}code{word-break:break-all}</style></head>
+<body><main>
+<h1>FLIPMEDIA TikTok Sandbox</h1>
+<div id="callback"></div>
+<div id="login">
+<p>Start hier de officiële TikTok Sandbox-autorisatie.</p>
+<label>Client key <input id="key" autocomplete="off" placeholder="Plak alleen de Client key (niet de Client secret)"></label>
+<button id="go">Verbinden met TikTok</button>
+<p class="muted">De Client key wordt alleen in deze browser gebruikt. De Client secret hoort nooit in deze pagina.</p>
+</div>
+</main>
+<script>
+const REDIRECT='https://flipmedianl.github.io/mijn-web/tiktok-callback.html';
+const q=new URLSearchParams(location.search);
+const cb=document.getElementById('callback');
+if(q.get('error')){
+ cb.innerHTML='<h2>Niet gelukt</h2><p>'+String(q.get('error_description')||q.get('error')).replace(/[<>]/g,'')+'</p>';
+}
+if(q.get('code')){
+ document.getElementById('login').style.display='none';
+ const sent=sessionStorage.getItem('tt_state');
+ const returned=q.get('state');
+ if(!sent || sent!==returned){cb.innerHTML='<h2>Controle mislukt</h2><p>De beveiligingscode kwam niet overeen. Start de test opnieuw.</p>';}
+ else {cb.innerHTML='<h2 class="ok">TikTok toestemming gelukt ✓</h2><p>De Sandbox heeft een geldige autorisatiecode teruggestuurd. Laat dit scherm open voor de volgende stap.</p><p class="muted">Scopes: <code>'+String(q.get('scopes')||'').replace(/[<>]/g,'')+'</code></p>';}
+}
+document.getElementById('go').onclick=()=>{
+ const key=document.getElementById('key').value.trim();
+ if(!key){alert('Vul eerst de Client key in.');return;}
+ const a=new Uint8Array(24);crypto.getRandomValues(a);
+ const state=Array.from(a,b=>b.toString(16).padStart(2,'0')).join('');
+ sessionStorage.setItem('tt_state',state);
+ const p=new URLSearchParams({client_key:key,response_type:'code',scope:'user.info.basic,video.publish,video.upload',redirect_uri:REDIRECT,state});
+ location.href='https://www.tiktok.com/v2/auth/authorize/?'+p.toString();
+};
+</script></body></html>
