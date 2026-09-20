@@ -6,16 +6,21 @@ OUT="content/short"
 os.makedirs(OUT,exist_ok=True)
 
 # First FLIPMEDIA format: one coherent topic, with a separate visual search for every beat.
-scenes=[
- ("Je website verliest bezoekers in 5 seconden","abstract website error screen"),
- ("1. Je eerste scherm is niet duidelijk","website interface close up"),
- ("Bezoekers moeten direct snappen wat je doet","smartphone website screen close up"),
- ("2. Te langzaam","loading screen technology"),
- ("Maak mobiel snelheid je prioriteit","smartphone screen interface"),
- ("3. Te veel tekst wordt overgeslagen","computer website interface close up"),
- ("Maak het visueel. Kort. Duidelijk.","abstract digital interface"),
- ("Wil je meer slimme webtips?","futuristic website interface"),
+content_sets=[
+ [("3 signalen dat je homepage niet werkt","website analytics screen"),("1. Niemand snapt direct wat je aanbiedt","website interface close up"),("Maak je belofte zichtbaar bovenaan","laptop website screen"),("2. Je belangrijkste knop valt niet op","smartphone website interface"),("Geef elke pagina één duidelijke actie","computer mouse website"),("3. Mobiel voelt onrustig","mobile website scrolling"),("Schrap afleiding en maak ruimte","minimal digital interface"),("Meer praktische webtips? Volg FLIPMEDIA","abstract technology screen")],
+ [("Je website kan sneller zonder redesign","website speed technology"),("Begin met zware afbeeldingen","image compression computer"),("Gebruik moderne formaten en kleinere bestanden","computer files interface"),("Laad alleen wat bezoekers echt nodig hebben","loading website screen"),("Controleer vooral je mobiele versie","smartphone website close up"),("Elke seconde telt voor aandacht","digital timer technology"),("Test. Verbeter. Meet opnieuw.","website analytics dashboard"),("Meer slimme webtips? Volg FLIPMEDIA","futuristic digital interface")],
+ [("Waarom klikken bezoekers niet?","website cursor screen"),("Je knop zegt misschien te weinig","website button interface"),("Vervang vaag door een duidelijke actie","computer website close up"),("Laat zien wat er na de klik gebeurt","smartphone app interface"),("Zet de belangrijkste actie in beeld","website interface macro"),("Gebruik minder concurrerende knoppen","minimal website screen"),("Duidelijkheid wint van drukte","abstract digital interface"),("Meer conversietips? Volg FLIPMEDIA","technology screen close up")],
+ [("3 snelle verbeteringen voor je mobiele site","smartphone website screen"),("1. Maak tekst direct scanbaar","mobile reading screen"),("2. Geef knoppen genoeg ruimte","smartphone interface close up"),("3. Haal onnodige elementen weg","minimal mobile interface"),("Test met één hand op je telefoon","hand holding smartphone back view"),("Controleer snelheid én duidelijkheid","website speed mobile"),("Kleine verbeteringen tellen op","digital analytics interface"),("Meer webtips? Volg FLIPMEDIA","abstract technology interface")]
 ]
+# Rotate content automatically so consecutive runs do not reuse the same script.
+state_path=f"{OUT}/../last-content.txt"
+last=-1
+try:
+    with open(state_path) as sh: last=int(sh.read().strip())
+except Exception: pass
+choice=(last+1)%len(content_sets)
+scenes=content_sets[choice]
+with open(state_path,"w") as sh: sh.write(str(choice))
 clips=[]
 def get_json(url):
     req=urllib.request.Request(url,headers={"Authorization":KEY,"User-Agent":"FLIPMEDIA/1.0"})
