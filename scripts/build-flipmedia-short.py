@@ -7,14 +7,14 @@ os.makedirs(OUT,exist_ok=True)
 
 # First FLIPMEDIA format: one coherent topic, with a separate visual search for every beat.
 scenes=[
- ("Je website verliest bezoekers in 5 seconden","person frustrated laptop"),
- ("1. Je eerste scherm is niet duidelijk","website design laptop"),
- ("Bezoekers moeten direct snappen wat je doet","person browsing website phone"),
- ("2. Een trage site kost aandacht","waiting loading laptop"),
- ("Maak mobiel snelheid je prioriteit","smartphone website scrolling"),
- ("3. Te veel tekst wordt overgeslagen","web designer working screen"),
- ("Maak het visueel. Kort. Duidelijk.","creative digital design"),
- ("Wil je meer slimme webtips?","modern website technology"),
+ ("Je website verliest bezoekers in 5 seconden","abstract website error screen"),
+ ("1. Je eerste scherm is niet duidelijk","website interface close up"),
+ ("Bezoekers moeten direct snappen wat je doet","smartphone website screen close up"),
+ ("2. Een trage site kost aandacht","loading screen technology"),
+ ("Maak mobiel snelheid je prioriteit","smartphone screen interface"),
+ ("3. Te veel tekst wordt overgeslagen","computer website interface close up"),
+ ("Maak het visueel. Kort. Duidelijk.","abstract digital interface"),
+ ("Wil je meer slimme webtips?","futuristic website interface"),
 ]
 clips=[]
 def get_json(url):
@@ -58,7 +58,7 @@ for i,(p,text,url) in enumerate(clips):
     safe=text.replace("\\","\\\\").replace(":","\\:").replace("'","\\'")
     out=f"{OUT}/scene-{i:02}.mp4"
     vf=("scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,"
-        "drawbox=x=70:y=1325:w=940:h=260:color=black@0.64:t=fill,"
+        "drawbox=x=55:y=1190:w=970:h=360:color=black@0.78:t=fill,"
         f"drawtext=fontfile={font}:text='{safe}':fontcolor=white:fontsize=64:"
         "x=(w-text_w)/2:y=1400:box=0")
     subprocess.run(["ffmpeg","-y","-stream_loop","-1","-i",p,"-t",str(scene_dur),"-vf",vf,
