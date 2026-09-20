@@ -3,26 +3,42 @@ on:
   workflow_dispatch:
     inputs:
       auth_code:
-        description: "TikTok authorization code from callback URL"
+        description: "One-time TikTok authorization code from callback"
         required: true
         type: string
 
 jobs:
   test:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
+
+      # Exchange the one-time code FIRST. This prevents it expiring while the video is being generated.
+      - name: Exchange TikTok authorization code
+        id: token
+        env:
+          TIKTOK_CLIENT_KEY: ${{ secrets.TIKTOK_CLIENT_KEY }}
+          TIKTOK_CLIENT_SECRET: ${{ secrets.TIKTOK_CLIENT_SECRET }}
+          TIKTOK_AUTH_CODE: ${{ inputs.auth_code }}
+        run: |
+          set -euo pipefail
+          RESPONSE=$(curl --fail-with-body -sS -X POST "https://open.tiktokapis.com/v2/oauth/token/"             -H "Content-Type: application/x-www-form-urlencoded"             --data-urlencode "client_key=$TIKTOK_CLIENT_KEY"             --data-urlencode "client_secret=$TIKTOK_CLIENT_SECRET"             --data-urlencode "code=$TIKTOK_AUTH_CODE"             --data-urlencode "grant_type=authorization_code"             --data-urlencode "redirect_uri=https://flipmedianl.github.io/mijn-web/tiktok-callback.html")
+          TOKEN=$(python3 -c 'import json,sys; d=json.loads(sys.argv[1]); print(d["access_token"])' "$RESPONSE")
+          echo "::add-mask::$TOKEN"
+          echo "access_token=$TOKEN" >> "$GITHUB_OUTPUT"
+
       - name: Install FFmpeg
         run: sudo apt-get update -qq && sudo apt-get install -y ffmpeg
+
       - name: Build fresh FLIPMEDIA test video
         env:
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python scripts/build-flipmedia-short.py
-      - name: Exchange code and upload private test video
+
+      - name: Upload private FLIPMEDIA test video to TikTok
         env:
-          TIKTOK_AUTH_CODE: ${{ inputs.auth_code }}
-          TIKTOK_CLIENT_KEY: ${{ secrets.TIKTOK_CLIENT_KEY }}
-          TIKTOK_CLIENT_SECRET: ${{ secrets.TIKTOK_CLIENT_SECRET }}
+          TIKTOK_ACCESS_TOKEN: ${{ steps.token.outputs.access_token }}
           TIKTOK_VIDEO_FILE: content/short/flipmedia-short.mp4
-        run: python scripts/tiktok-sandbox-test.py
+        run: python scripts/tiktok-upload-video.py
