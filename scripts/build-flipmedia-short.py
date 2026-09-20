@@ -21,11 +21,11 @@ def gemini_content():
             break
         except urllib.error.HTTPError as e:
             if e.code not in (429,500,502,503,504) or attempt==7:
-                raise
+                break
             time.sleep(4*(attempt+1))
         except urllib.error.URLError:
-            if attempt==7: raise
-            time.sleep(3*(attempt+1))
+            if attempt==7: break
+            time.sleep(4*(attempt+1))
     if not data:
         # Temporary Gemini outage: use a valid built-in FLIPMEDIA concept so the pipeline can continue.
         return "3 snelle conversietips voor je website", [
