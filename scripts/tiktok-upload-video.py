@@ -12,7 +12,12 @@ privacy="SELF_ONLY" if "SELF_ONLY" in data.get("privacy_level_options",[]) else 
 
 payload={"post_info":{"title":"FLIPMEDIA test","privacy_level":privacy,"disable_duet":False,"disable_comment":False,"disable_stitch":False},"source_info":{"source":"FILE_UPLOAD","video_size":size,"chunk_size":size,"total_chunk_count":1}}
 req=urllib.request.Request("https://open.tiktokapis.com/v2/post/publish/video/init/",data=json.dumps(payload).encode(),headers=headers)
-with urllib.request.urlopen(req,timeout=60) as r: init=json.load(r)
+try:
+    with urllib.request.urlopen(req,timeout=60) as r: init=json.load(r)
+except urllib.error.HTTPError as e:
+    body=e.read().decode(errors="replace")
+    print("TikTok init rejected:", e.code, body)
+    sys.exit(1)
 if init.get("error",{}).get("code")!="ok": print(json.dumps(init)); sys.exit(1)
 upload_url=init["data"]["upload_url"]; publish_id=init["data"]["publish_id"]
 with open(video,"rb") as f: raw=f.read()
